@@ -1,3 +1,3 @@
-# Hello World
+# maven-project
 
-This is a simple java web application to desplay hello world text in the browser
+Simple Maven Project
