@@ -3,3 +3,4 @@
 Simple Maven Project
 
 Test
+This is a test.
