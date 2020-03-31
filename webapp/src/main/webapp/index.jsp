@@ -5,3 +5,5 @@
 <h1> ANSIBLE </h1>
 <h2> welcome to container </h2>
 <h1> Pipeline creation!!! </h1>
+<p> Logged in to docker </p>
+
