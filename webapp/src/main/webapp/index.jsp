@@ -1,20 +1,23 @@
-<%@ include file="index.jsp" %>  
-<hr/>  
-  
-<h3>Login Form</h3>  
-<%  
-String profile_msg=(String)request.getAttribute("profile_msg");  
-if(profile_msg!=null){  
-out.print(profile_msg);  
-}  
-String login_msg=(String)request.getAttribute("login_msg");  
-if(login_msg!=null){  
-out.print(login_msg);  
-}  
- %>  
- <br/>  
-<form action="loginprocess.jsp" method="post">  
-Email:<input type="text" name="email"/><br/><br/>  
-Password:<input type="password" name="password"/><br/><br/>  
-<input type="submit" value="login"/>"  
-</form>  
+<form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
