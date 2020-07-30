@@ -3,4 +3,5 @@
 <h2> Changed content for Ansible...zooooom end to end GIT</h2>
 <h3> Changed content for Ansible...zooooom end to end GIT to container via Ansible-playbook and docker HUB Fun</h3>
 <h3> SCM Poll played with me an hour</h3>
-<h3> End to End Deploy on Kubernetes cluster</h3>
+<h3> End to End Deploy on Kubernetes cluster with  Rolling update for latest image fetch</h3>
+
