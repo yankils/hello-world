@@ -1,1 +1,1 @@
-<h1> Hello from CI/CD project</h1>
+<h1> Hello from CI/CD project!</h1>
