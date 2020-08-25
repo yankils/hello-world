@@ -1,1 +1,1 @@
-<h1> Hello from CI/CD project-version 2</h1>
+<h1> Hello from CI/CD project-version 2.0</h1>
