@@ -4,12 +4,14 @@ pipeline {
     stage('Buzz Build') {
       steps {
         sh 'echo "Build"'
+        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
 
     stage('Test') {
       steps {
         sh 'echo "Test"'
+        junit 'target/**/TEST*.xml'
       }
     }
 
