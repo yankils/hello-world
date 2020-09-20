@@ -3,30 +3,19 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh 'echo "I am a ${BUZZ_NAME}"'
+        sh 'echo "Build"'
       }
     }
 
-    stage('Buzz test') {
-      parallel {
-        stage('Testing A') {
-          steps {
-            sh 'echo "Test"'
-          }
-        }
+    stage('Test') {
+      steps {
+        sh 'echo "Test"'
+      }
+    }
 
-        stage('Testing B') {
-          steps {
-            sh '''sleep 10
-
-
-
-
-
-echo done'''
-          }
-        }
-
+    stage('Deploy') {
+      steps {
+        sh 'echo "Deploy"'
       }
     }
 
