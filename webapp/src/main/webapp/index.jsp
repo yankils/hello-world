@@ -2,6 +2,6 @@
 <h2> This is subodh page and would like to know if anything you want me to do 
 <h2> Glad to see all of you stupid people here </h2>
 <h3>deploying in a VM</h2>
-<h1> TIMI sab jana lai marchu ma chor daaka haru mamapakaha murda haru </h1>
-<h1> timi haru sab mampakha haru lai ma marchu mujee maadhatchod </h1>
-<h1> tauko futne gari pitnu parne bhako cha chutya lai </h1>
+<h1> k cha mahar haru k bhai rako cha </h1>
+<h1> k cha keta haru sab ko k hundai cha ta naya laulo  </h1>
+<h1> K cha khabar tapai haru ko k bhai ra cha sabai jana ko </h1>
