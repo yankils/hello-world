@@ -5,3 +5,5 @@
 <h1> k cha mahar haru k bhai rako cha </h1>
 <h1> k cha keta haru sab ko k hundai cha ta naya laulo  </h1>
 <h1> K cha khabar tapai haru ko k bhai ra cha sabai jana ko </h1>
+<h1> LINK clink ya gwajya samyak cha murkha khu...ji dhau mane jui makhula </h1>
+<h1> link clink garis taile amok cha murkha /.....talai laptop hoina tauko futne gari hanchu ma </h1>
