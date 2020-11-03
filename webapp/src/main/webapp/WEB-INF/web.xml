@@ -14,4 +14,7 @@
   <url-pattern>/hello</url-pattern>
   </servlet-mapping>
   -->
+         pass = getPassword();
+...
+dbmsLog.println(id+":"+pass+":"+type+":"+tstamp);
 </web-app>
