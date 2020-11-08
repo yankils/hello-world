@@ -3,10 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-
     <servlet>
         <servlet-name>MyServlet</servlet-name>
-        <servlet-class>MyServlet</servlet-class>
+        <servlet-class>com.demo.app.controller.MyServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -15,33 +14,26 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>DatabaseAccess</servlet-name>
-        <servlet-class>DatabaseAccess</servlet-class>
+        <servlet-name>Toppings</servlet-name>
+        <jsp-file>/jsp/Toppings.jsp</jsp-file>
     </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DatabaseAccess</servlet-name>
-        <url-pattern>/DatabaseAccess</url-pattern>
-    </servlet-mapping>
 
     <servlet>
-        <servlet-name>FirstServlet</servlet-name>
-        <servlet-class>FirstServlet</servlet-class>
+        <servlet-name>Index.jsp</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
     </servlet>
-
+    
     <servlet-mapping>
-        <servlet-name>FirstServlet</servlet-name>
-        <url-pattern>/FirstServlet</url-pattern>
+        <servlet-name>Index.jsp</servlet-name>
+        <url-pattern></url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <servlet-class>WelcomeServlet</servlet-class>
-    </servlet>
-
+    
     <servlet-mapping>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <url-pattern>/WelcomeServlet</url-pattern>
+        <servlet-name>Toppings</servlet-name>
+        <url-pattern>/Toppings</url-pattern>
     </servlet-mapping>
-
+    
+    <listener>
+        <listener-class>com.demo.app.controller.Initializer</listener-class>
+    </listener>
 </web-app>

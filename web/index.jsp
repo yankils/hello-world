@@ -1,21 +1,24 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Que
-  Date: 13-Nov-19
-  Time: 11:58
+  User: pc
+  Date: 12/15/17
+  Time: 3:19 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-  <title>Hello, I am a Java web app!</title>
-</head>
-<body>
-<h1>Simple Java Web App Demo</h1>
-<p>To invoke the java servlet click <a href="MyServlet">here</a></p>
-<form action="FirstServlet" method="post">
-  Name:<input type="text" name="username"/><br/><br/>
-  Password:<input type="password" name="userpass"/><br/><br/>
-  <input type="submit" value="login"/>
-</body>
+  <head>
+    <title>Main Page</title>
+  </head>
+  <body>
+    <h1>Welcome!!</h1>
+    <p>Please select a color...</p>
+    <form action="MyServlet" method="post">
+      <input type="radio" name="color" value="blue">Blue
+      <input type="radio" name="color" value="yellow">Yellow
+      <input type="radio" name="color" value="red">Red
+      <input type="radio" name="color" value="green">Green
+      <input type="submit" value="submit">
+    </form>
+  </body>
 </html>

@@ -1,7 +1,5 @@
-# Pull base image 
-From tomcat:8-jre8 
+FROM tomcat
+COPY target/tomcatdemoapp.war /usr/local/tomcat/webapps
 
-# Maintainer 
-MAINTAINER "vova@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
-
+WORKDIR /usr/local/tomcat
+CMD catalina.sh run
