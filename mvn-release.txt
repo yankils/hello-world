@@ -1,0 +1,5 @@
+-V clean -DdryRun=true -B release:prepare release:perform -Dtag=WebApp-${releaseVersion} -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${nextDevelopmentVersion}
+
+mvn -V clean -DdryRun=true -B release:prepare release:perform -Dtag=WebApp-1.0.0-RC-1 -DreleaseVersion=1.0.0-RC-1 -DdevelopmentVersion=1.0.0-SNAPSHOT
+
+mvn -V clean -B -Dresume=false release:prepare release:perform -Dtag=WebApp-1.0.0-RC-2 -DreleaseVersion=1.0.0-RC-2 -DdevelopmentVersion=1.0.0-SNAPSHOT

@@ -1,220 +1,127 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.devops.webapp</groupId>
+	<artifactId>WebApp</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>${project.artifactId}-${project.version}</name>
 
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.example.maven-project</groupId>
-  <artifactId>maven-project</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>Maven Project</name>
-  <description>Sample Maven project with a working, deployable site.</description>
-  <url>http://www.example.com</url>
-
-  <properties>
-    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-  </properties>
-
-  <modules>
-    <module>server</module>
-    <module>webapp</module>
-  </modules>
-
-  <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/maven-project-site</url>
-    </site>
-  </distributionManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <reportPlugins>
-            <plugin>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-pmd-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>taglist-maven-plugin</artifactId>
-            </plugin>
-          </reportPlugins>
-        </configuration>
-      </plugin>
-    </plugins>
-
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>2.8</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.8</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-jxr-plugin</artifactId>
-          <version>2.3</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.6</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.4</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.2.1</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.5</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.0</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>2.11</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.11</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>2.3.3</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>taglist-maven-plugin</artifactId>
-          <version>2.4</version>
-        </plugin>
-
-        <plugin>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.0.0.M1</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>jsp-api</artifactId>
-        <version>2.2</version>
-      </dependency>
-
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit-dep</artifactId>
-        <version>4.10</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-core</artifactId>
-        <version>1.2.1</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-library</artifactId>
-        <version>1.2.1</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>1.8.5</version>
-        <scope>test</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
-  <scm>
-    <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
-    <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>http://github.com/jleetutorial/maven-project</url>
-  </scm>
-
-  <prerequisites>
-    <maven>3.0.3</maven>
-  </prerequisites>
-
+	<properties>
+		<project.scm.id>github</project.scm.id>
+		<github.global.server>github</github.global.server>
+	</properties>
+	<scm>
+		<url>https://github.com/DIGITALAPPLICATION/WebApp.git</url>
+		<connection>scm:git:https://github.com/DIGITALAPPLICATION/WebApp.git</connection>
+		<developerConnection>scm:git:https://github.com/DIGITALAPPLICATION/WebApp.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<arguments>-DskipTests</arguments>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.shared</groupId>
+						<artifactId>maven-invoker</artifactId>
+						<version>2.2</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<!-- Add/update this in tomcat-home/conf/tomcat-users.xml file
+					<role rolename="manager-gui"/>
+					<user username="tomcat" password="s3cret" roles="admin,tomcat,manager-gui,manager-script"/>
+					Run the maven goal tomcat7:deploy to deploy your war package to tomcat server.
+				-->
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8888/manager/text</url>
+					<update>true</update>
+					<path>/${project.artifactId}-${project.version}</path>
+					<username>tomcat</username>
+					<password>s3cret</password>
+				</configuration>
+			</plugin>
+			<!--
+			<plugin>
+				1. Add/update this in tomcat-home/conf/tomcat-users.xml file
+					<role rolename="manager-gui"/>
+					<user username="tomcat" password="s3cret" roles="admin,tomcat,manager-gui,manager-script"/>
+					Run the maven goal tomcat7:deploy to deploy your war package to tomcat server.
+				2. Add the server details in settings.xml file
+						<server>
+							<id>TomcatServer</id> this id <value> should match with below <server> value
+							<username>tomcat</username>
+							<password>s3cret</password>
+						</server>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8888/manager/text</url>
+					<update>true</update>
+					<path>/${project.artifactId}-${project.version}</path>
+					<server>TomcatServer</server>
+				</configuration>
+			</plugin>
+			-->
+		</plugins>
+	</build>
+	
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>libs-release</name>
+			<url>http://18.191.134.246:32768/nexus/content/artifactory/libs-release</url>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>deployment</id>
+			<name>Nexus Release Repository</name>
+			<url>http://18.191.134.246:32768/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>deployment</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://18.191.134.246:32768/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.jdbc.url>jdbc:postgresql://54.234.236.123/sonar</sonar.jdbc.url>
+				<sonar.jdbc.driver>org.postgresql.Driver</sonar.jdbc.driver>
+				<sonar.jdbc.username>sonar</sonar.jdbc.username>
+				<sonar.jdbc.password>sonar</sonar.jdbc.password>
+				<sonar.host.url>http://54.234.236.123:9000</sonar.host.url>
+			</properties>
+		</profile>
+	</profiles>
 </project>
