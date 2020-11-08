@@ -1,9 +1,7 @@
-FROM ubuntu
+# Pull base image 
+From tomcat:8-jre8 
 
-RUN apt-get update && apt-get install apache2 -y && service apache2 restart
+# Maintainer 
+MAINTAINER "vova@gmail.com" 
+COPY ./webapp.war /usr/local/tomcat/webapps
 
-ADD index.html /var/www/html/
-
-CMD apachectl -D FOREGROUND
-
-#RUN rm -rf var/www/html/*

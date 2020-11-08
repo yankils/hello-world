@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DockerJavaWebApp:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/DockerJavaWebApp_war</output-path>
+    <root id="archive" name="DockerJavaWebApp_war.war">
+      <element id="artifact" artifact-name="DockerJavaWebApp:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mariadb-java-client-2.4.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

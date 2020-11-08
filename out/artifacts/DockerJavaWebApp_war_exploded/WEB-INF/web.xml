@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>MyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/MyServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DatabaseAccess</servlet-name>
+        <servlet-class>DatabaseAccess</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DatabaseAccess</servlet-name>
+        <url-pattern>/DatabaseAccess</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FirstServlet</servlet-name>
+        <servlet-class>FirstServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FirstServlet</servlet-name>
+        <url-pattern>/FirstServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>WelcomeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/WelcomeServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
