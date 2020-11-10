@@ -4,7 +4,10 @@
 </head>
 <body>
 <font color="black">Made by Volodymyr Verholyak<br><br>
+<<<<<<< HEAD
 <font color="black">Made by Volodymyr Verholyak<br><br>
+=======
+>>>>>>> tester
 <font color="magenta">Version 1.2<br>
 <font color="black">
 <h1 align="center" style="font-size:300%;">Hello World!</h1>
