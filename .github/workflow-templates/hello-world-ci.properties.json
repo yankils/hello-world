@@ -1,0 +1,13 @@
+{
+  "name": "Hello World CI Workflow",
+  "description": "Hello World CI workflow template.",
+  "iconName": "ice-cream",
+  "categories": [
+    "Java"
+  ],
+  "filePatterns": [
+    "package.json$",
+    "^Dockerfile",
+    ".*\\.md$"
+  ]
+}
