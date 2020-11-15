@@ -1,0 +1,14 @@
+currentBuild.displayName = "Build-"+currentBuild.number
+pipeline {
+    agent { label 'slave-docker' }
+  
+    stages {
+        stage('DeployDockerImage') { 
+            steps {
+                sshagent(['local-user']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/prod_env/docker/playbook-deploy-prod-project.yml --limit 18.159.26.114"
+                }
+            }
+        }        
+    }
+}

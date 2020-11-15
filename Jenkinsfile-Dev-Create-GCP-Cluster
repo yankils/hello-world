@@ -1,0 +1,14 @@
+currentBuild.displayName = "Build-"+currentBuild.number
+pipeline {
+    agent { label 'slave-kubernetes' }
+  
+    stages {
+        stage('CreateGCPCluster') { 
+            steps {
+                sshagent(['local-user']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/dev_env/kubernetes/playbook-k8s-gcp-create-cluster.yaml --limit localhost"
+                }
+            }
+        }        
+    }
+}

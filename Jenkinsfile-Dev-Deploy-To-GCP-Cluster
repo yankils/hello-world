@@ -1,0 +1,45 @@
+currentBuild.displayName = "Build-"+currentBuild.number
+pipeline {
+    agent { label 'slave-kubernetes' }
+    
+    environment {
+        //Get maven home path
+        mvnHome = tool name: 'M2_HOME', type: 'maven'
+    }
+    stages {
+//        stage('GitChechout') { 
+//            steps {
+//                git credentialsId: 'ssh-key-jenkins-to-git', url: 'git@github.com:verholyak/hello-world.git'
+//            }
+//        }
+        stage('TestMaven') { 
+            steps {
+                sh "${mvnHome}/bin/mvn clean package"
+                sh "mv webapp/target/*.war /opt/dev_env/kubernetes/webapp.war"
+            }
+        }
+        stage('TestSonarQube') { 
+            steps {
+                withSonarQubeEnv('SonarQube') { 
+                sh "${mvnHome}/bin/mvn sonar:sonar"
+                }
+            }
+        }
+        stage('CreateDockerImageForK8s') { 
+            steps {
+                sshagent(['ssh-key-jenkins-to-git']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/dev_env/kubernetes/playbook-create-devops-image.yml --limit localhost"
+                }
+            }
+        }
+        stage('DeployDockerImageForK8s') { 
+            steps {
+                sshagent(['local-user']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/dev_env/kubernetes/playbook-k8s-gcp-config-deploy.yaml --limit localhost"
+               // sh "sleep 10"
+                echo "Your IP is -->>  "; sh "kubectl get svc --all-namespaces -o jsonpath='{range.items[?(@.status.loadBalancer.ingress)]}{.status.loadBalancer.ingress[*].ip}'"
+                }
+            }
+        }
+    }
+}

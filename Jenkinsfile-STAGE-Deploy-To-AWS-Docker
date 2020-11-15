@@ -1,0 +1,43 @@
+currentBuild.displayName = "Build-"+currentBuild.number
+pipeline {
+    agent { label 'slave-docker' }
+    
+    environment {
+        //Get maven home path
+        mvnHome = tool name: 'M2_HOME', type: 'maven'
+    }
+    stages {
+//        stage('GitChechout') { 
+//            steps {
+//                git credentialsId: 'ssh-key-jenkins-to-git', url: 'git@github.com:verholyak/hello-world.git'
+//            }
+//        }
+        stage('TestMaven') { 
+            steps {
+                sh "${mvnHome}/bin/mvn clean package"
+                sh "mv webapp/target/*.war /opt/stage_env/docker/webapp.war"
+            }
+        }
+        stage('TestSonarQube') { 
+            steps {
+                withSonarQubeEnv('SonarQube') { 
+                sh "${mvnHome}/bin/mvn sonar:sonar"
+                }
+            }
+        }
+        stage('CreateDockerImage') { 
+            steps {
+                sshagent(['ssh-key-jenkins-to-git']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/stage_env/docker/playbook-create-devops-image.yml --limit localhost"
+                }
+            }
+        }
+        stage('DeployDockerImageToSTAGE') { 
+            steps {
+                sshagent(['ssh-key-jenkins-to-git']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/stage_env/docker/playbook-create-devops-project.yml --limit 18.198.63.214"
+                }
+            }
+        }
+    }
+}

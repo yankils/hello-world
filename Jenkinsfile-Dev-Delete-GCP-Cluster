@@ -1,0 +1,14 @@
+currentBuild.displayName = "Build-"+currentBuild.number
+pipeline {
+    agent { label 'slave-kubernetes' }
+  
+    stages {
+        stage('DeleteGCPCluster') { 
+            steps {
+                sshagent(['local-user']) { 
+                sh "ansible-playbook -i /opt/hosts /opt/dev_env/kubernetes/playbook-k8s-gcp-delete-cluster.yaml"
+                }
+            }
+        }        
+    }
+}
