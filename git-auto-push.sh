@@ -44,8 +44,16 @@ function write_argument()
 
 function all_argument()
 {
-#    git checkout tester
-    cp $home_dir/examlpe-index/index-1.jsp $home_dir/webapp/src/main/webapp/index-eeee.jsp
+    git checkout tester
+    mv $home_dir/examlpe-index/index-1.jsp $home_dir/webapp/src/main/webapp/index.jsp
+    git add index.jsp
+    git commit -m "change index-1"
+    git push --all
+    git checkout master
+    git merge tester
+    git add .
+    git commit -m "merge tester changes"
+    git push --all
     echo
     read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
     echo
