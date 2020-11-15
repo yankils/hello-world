@@ -1,3 +1,14 @@
-<h1> Hello, Welcome to Simple DevOps Project !!   </h1>
-<h2> Deploying on a kubernetes using ansible for Valaxy Technologies </h2>
-<h2> Glad to see you here </h2>
+<html>
+<head>
+<title>Simple Web Page</title>
+</head>
+<body>
+<font color="black">Made by Volodymyr Verholyak<br><br>
+<font color="black">Make changes by git tester user<br><br>
+<font color="magenta">Version 1.3<br>
+<font color="black">
+<h1 align="center" style="font-size:300%;">Hello World!</h1>
+<p align="center" style="font-size:160%;">You are on the TomCat Server</p>
+<p align="center" style="font-size:160%;"><a href="http://35.214.209.115:8081/examples/servlets/">Servlet Examples with Code</a></p>
+</body>
+</html>
