@@ -57,11 +57,11 @@ function argument_1()
     git add index.jsp
     git commit -m "change index-1"
     git push --all
-    git merge master
+    #git merge master
     git checkout master
-    git merge tester
-    git add .
-    git commit -m "merge tester changes 1"
+    git merge -m "merge tester changes 1" tester --no-ff
+    #git add .
+   # git commit -m "merge tester changes 1"
     git push --all
     echo
     read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
