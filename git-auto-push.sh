@@ -8,10 +8,12 @@ NOCOLOR="\033[0m"
 
 echo
 echo "This script was writen by Volodymyr Verkholyak v.0.1"
-echo "IMPORTANT !!! Run the script as a root !!!"
+echo "Git-Script make push changes as user 'tester' to the main branch 'master'"
 echo "Read the short manual before using:"
-echo "      --all     key displays the IP addresses symbolic names of all hosts in the current subnet"
-echo "      --target  key displays a list of open system TCP ports."
+echo "      --1       key change main index.html, Example 1"
+echo "      --2       key change main index.html, Example 2"
+echo "      --3       key change main index.html, Example 3"
+echo "      --e       key change main index.html, Example error"
 echo "      --exit    key you will leave the program"
 echo "      --man     key you will read short manual"
 echo
@@ -20,16 +22,22 @@ home_dir=`pwd`
 
 function write_argument()
 {
-    if   [ $argument == "--all" ]
+    if  [[ $argument == "--1" ]]
     then
-        all_argument
-    elif [ $argument == "--target" ]
+        argument_1
+    elif [[ $argument == "--2" ]]
     then
-        target_argument
-    elif [ $argument == "--man" ]
+        argument_2
+    elif [[ $argument == "--3" ]]
+    then
+        argument_3
+    elif [[ $argument == "--e" ]]
+    then
+        argument_e
+    elif [[ $argument == "--man" ]]
     then
         man
-    elif [ $argument == "--exit" ]
+    elif [[ $argument == "--exit" ]]
     then
         echo -e "${BLUE}.......................................... Bye !${NOCOLOR}\n"
         exit
@@ -42,7 +50,7 @@ function write_argument()
     fi
 }
 
-function all_argument()
+function argument_1()
 {
     git checkout tester
     mv $home_dir/examlpe-index/index-1.jsp $home_dir/webapp/src/main/webapp/index.jsp
@@ -52,8 +60,78 @@ function all_argument()
     git checkout master
     git merge tester
     git add .
-    git commit -m "merge tester changes"
+    git commit -m "merge tester changes 1"
     git push --all
+    echo
+    read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
+    echo
+    write_argument
+}
+
+function argument_2()
+{
+    git checkout tester
+    mv $home_dir/examlpe-index/index-2.jsp $home_dir/webapp/src/main/webapp/index.jsp
+    git add index.jsp
+    git commit -m "change index-2"
+    git push --all
+    git checkout master
+    git merge tester
+    git add .
+    git commit -m "merge tester changes 2"
+    git push --all
+    echo
+    read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
+    echo
+    write_argument
+}
+
+function argument_3()
+{
+    git checkout tester
+    mv $home_dir/examlpe-index/index-3.jsp $home_dir/webapp/src/main/webapp/index.jsp
+    git add index.jsp
+    git commit -m "change index-3"
+    git push --all
+    git checkout master
+    git merge tester
+    git add .
+    git commit -m "merge tester changes 3"
+    git push --all
+    echo
+    read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
+    echo
+    write_argument
+}
+
+function argument_e()
+{
+    git checkout tester
+    mv $home_dir/examlpe-index/index-error.jsp $home_dir/webapp/src/main/webapp/index.jsp
+    git add index.jsp
+    git commit -m "change index-e"
+    git push --all
+    git checkout master
+    git merge tester
+    git add .
+    git commit -m "merge tester changes e"
+    git push --all
+    echo
+    read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
+    echo
+    write_argument
+}
+
+function man()
+{
+    echo "Git-Script make push changes as user 'tester' to the main branch 'master'"
+    echo "Read the short manual before using:"
+    echo "      --1       key change main index.html, Example 1"
+    echo "      --2       key change main index.html, Example 2"
+    echo "      --3       key change main index.html, Example 3"
+    echo "      --e       key change main index.html, Example error"
+    echo "      --exit    key you will leave the program"
+    echo "      --man     key you will read short manual"
     echo
     read -p "$(echo -e ${RED}Enter Your Key: ${NOCOLOR})" argument
     echo
