@@ -57,9 +57,10 @@ function argument_1()
     git add index.jsp
     git commit -m "change index-1"
     git push --all
+    git merge tester
     git checkout master
     git merge tester
-    git checkout --theirs .
+    #git checkout --theirs .
     git add .
     git commit -m "merge tester changes 1"
     git push --all
