@@ -2,7 +2,7 @@
 <head>
 <title>Simple Web Page</title>
 </head>
-<body style="background-color:grey;"></body>
+<body style="background-color:green;"></body>
 <font color="black">Made by Volodymyr Verholyak<br><br>
 <font color="black">Make changes by git tester user<br><br>
 <font color="magenta">Version 2.3<br>
