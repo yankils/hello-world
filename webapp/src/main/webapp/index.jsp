@@ -2,18 +2,11 @@
 <head>
 <title>Simple Web Page</title>
 </head>
-<<<<<<< HEAD
 <body style="background-color:grey;"></body>
 <font color="black">Made by Volodymyr Verholyak<br><br>
 <font color="black">Made changes by git tester user<br><br>
 <font color="magenta">Version 2.3<br>
 <font color="black">OS-Centos<br>
-=======
-<body style="background-color:yellow;"></body>
-<font color="black">Made by Volodymyr Verholyak<br><br>
-<font color="black">Make changes by git tester user<br><br>
-<font color="magenta">Version 2.3<br>
->>>>>>> master
 <font color="black">
 <h1 align="center" style="font-size:300%;">Hello World!</h1>
 <p align="center" style="font-size:160%;">You are on the TomCat Server</p>
