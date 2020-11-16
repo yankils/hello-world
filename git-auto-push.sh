@@ -59,6 +59,7 @@ function argument_1()
     git push --all
     git checkout master
     git merge tester
+    git checkout --theirs .
     git add .
     git commit -m "merge tester changes 1"
     git push --all
