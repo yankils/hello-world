@@ -3,8 +3,13 @@
 <title>Simple Web Page</title>
 <<<<<<< HEAD
 </head>
+<<<<<<< HEAD
 <body style="background-color:blueviolet;"></bdy>
 <font color="bla">Made by Volodymyr Verholyak<r><br>
+=======
+<body style="background-color:blueviolet;"></body>
+<font color="black">Made by Volodymyr Verholyak<br><br>
+>>>>>>> tester
 <font color="black">Make changes by git tester user<br><br>
 <font color="genta">Version 2.3<br>
 <font color="blk">
