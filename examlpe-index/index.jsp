@@ -2,7 +2,11 @@
 <head>
 <title>Simple Web Page</title>
 </head>
+<<<<<<< HEAD
 <body>
+=======
+<body style="background-color:blueviolet;"></body>
+>>>>>>> tester
 <font color="black">Made by Volodymyr Verholyak<br><br>
 <font color="black">Make changes by git tester user<br><br>
 <font color="magenta">Version 2.3<br>
