@@ -2,7 +2,7 @@
 <head>
 <title>Simple Web Page</title>
 </head>
-<body style="background-color:grey;"></body>
+<body style="background-color:yellow;"></body>
 <font color="black">Made by Volodymyr Verholyak<br><br>
 <font color="black">
 <h1 align="center" style="font-size:300%;">Hello World!</h1>
