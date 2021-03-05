@@ -1,3 +1,3 @@
-<h1> Hello, Welcome to Simple DevOps Project !!   </h1>
-<h2> Deploying on a Docker. </h2>
-<h2> Glad to see you Sandeep </h2>
+<h1>  Welcome to Simple DevOps Project !!   </h1>
+<h2> I did it. I love DevOps. </h2>
+<h2> I am expert in DevOps </h2>
