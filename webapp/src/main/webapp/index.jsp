@@ -31,7 +31,7 @@ width:1500px;  /*1500*/
 <body>
 
 <div class="outer">
-    <p class="hr3">Green Blue Red<span></span></p>
+    <p class="hr3">Green Yellow Red<span></span></p>
 
 </div>
 
