@@ -15,7 +15,7 @@ width:1500px;  /*1500*/
 .hr3 {
   color: #38761d;
   font-style: normal;
-  font-size: 168px;
+  font-size: 100px;
   font-family: georgia;
   text-align: center;
   padding-top: 63px; /*102 */
