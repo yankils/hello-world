@@ -20,7 +20,7 @@ body {
   padding: 80px;
   text-align: center;
   background: #1abc9c;
-  color: white;
+  color: YELLOW;
 }
 
 /* Increase the font size of the heading */
@@ -41,7 +41,7 @@ body {
 .navbar a {
   float: left;
   display: block;
-  color: white;
+  color: RED;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
