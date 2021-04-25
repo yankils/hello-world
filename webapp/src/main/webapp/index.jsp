@@ -20,7 +20,7 @@ body {
   padding: 80px;
   text-align: center;
   background: #1abc9c;
-  color: YELLOW;
+  color: RED;
 }
 
 /* Increase the font size of the heading */
