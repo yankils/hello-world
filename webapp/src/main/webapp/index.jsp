@@ -49,7 +49,7 @@ div.desc {
 
 <div class="gallery">
   <a target="_blank" href="img_mountains.jpg">
-    <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+    <img src="tree-736885_1280.jpg" alt="Mountains" width="600" height="400">
   </a>
   <div class="desc">NOBODY</div>
 </div>
