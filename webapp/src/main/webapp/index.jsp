@@ -17,15 +17,15 @@ body {
 
 /* Header/logo Title */
 .header {
-  padding: 80px;
+  padding: 100px;
   text-align: center;
   background: #1abc9c;
-  color: white;
+  color: Yellow;
 }
 
 /* Increase the font size of the heading */
 .header h1 {
-  font-size: 40px;
+  font-size: 100px;
 }
 
 /* Style the top navigation bar */
@@ -113,8 +113,8 @@ body {
 <body>
 
 <div class="header">
-  <h1>My Website</h1>
-  <p>A website created by me.</p>
+  <h1>BEING HUMAN</h1>
+  <p> Welcome to the new world of life.</p>
 </div>
 
 <div class="navbar">
