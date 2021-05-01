@@ -23,7 +23,7 @@ input[type=text], select, textarea {
 
 input[type=submit] {
   background-color: #04AA6D;
-  color: white;
+  color: Yellow;
   padding: 12px 20px;
   border: none;
   cursor: pointer;
