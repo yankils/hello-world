@@ -1,7 +1,7 @@
 # Pull base image 
-From tomcat:8-jre8 
+From nirmata/tomcat9-alpine-jre12-openj9
 
 # Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
+MAINTAINER "aravind" 
 COPY ./webapp.war /usr/local/tomcat/webapps
 
