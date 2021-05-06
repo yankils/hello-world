@@ -90,6 +90,7 @@ input[type=submit]:hover {
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
 	  <option value="india">India</option>
+	  <option value="sydney">Sydney</option>
         </select>
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
