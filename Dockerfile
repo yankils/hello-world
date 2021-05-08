@@ -1,5 +1,5 @@
 # Pull base image 
-From nirmata/tomcat9-alpine-jre12-openj9
+From tomcat:8-jre8 
 
 # Maintainer 
 MAINTAINER "aravind" 
