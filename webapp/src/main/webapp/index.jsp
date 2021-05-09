@@ -14,17 +14,17 @@ body {
 /* Style inputs */
 input[type=text], select, textarea {
   width: 100%;
-  padding: 12px;
+  padding: 40px;
   border: 1px solid #ccc;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
 }
 
-input[type=SUBMIT] {
+input[type=submit] {
   background-color: #04AA6D;
-  color: Yellow;
-  padding: 20px 40px;
+  color: Red;
+  padding: 40px 80px;
   border: none;
   cursor: pointer;
 }
@@ -89,7 +89,6 @@ input[type=submit]:hover {
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
-          <option value="india">India</option>
         </select>
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
