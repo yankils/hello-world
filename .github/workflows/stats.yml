@@ -1,2 +1,10 @@
-- name: Pull Request Stats
-  uses: flowwer-dev/pull-request-stats@v2.0.1
+name: Pull Request Stats
+
+on: pull_request
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pull request stats
+        uses: flowwer-dev/pull-request-stats@master
