@@ -1,0 +1,179 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+$maincolor: #1fd100;
+$maincolor2: #262626;
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+  
+@mixin flex($flex-value) {
+  -webkit-box-flex: $flex-value;
+  -moz-box-flex:  $flex-value;
+  -webkit-flex:  $flex-value;
+  -ms-flex:  $flex-value;
+  flex:  $flex-value;
+}
+  
+@mixin justify($justify-value) {
+  -webkit-justify-content: $justify-value;
+  -moz-justify-content: $justify-value;
+  justify-content: $justify-value;
+}
+
+@mixin box-pack($box-pack) {
+  -webkit-box-pack: $box-pack;
+  -moz-box-pack: $box-pack;
+  -ms-flex-pack: $box-pack;
+}
+
+@mixin trans ($prop, $time) {
+  -webkit-transition: $prop $time;
+  -moz-transition: $prop $time;
+  -ms-transition: $prop $time;
+  -o-transition: $prop $time;
+  transition: $prop $time;
+}
+
+@mixin border-radius($bdrs) {
+  -webkit-border-radius: $bdrs;
+  -moz-border-radius: $bdrs;
+  border-radius: $bdrs;
+
+}
+
+////////////////////////////////////////////
+
+
+body,html,.login_form{
+  height: 100%; 
+}
+
+body {
+  background: $maincolor2;;
+}
+.login_form {
+  @include flexbox;
+  @include flex(center);
+  @include justify(center);
+  @include box-pack(center);
+  -webkit-align-items: center;
+    align-items: center;
+}
+
+.login-wrapper {
+  max-width: 500px;
+  width: 100%;
+}
+.logo {
+  text-align: center;
+  
+  img {
+    max-width: 200px;
+    width: 100%;
+    margin:  1em auto 2em;
+    
+  }
+}
+
+form {
+
+  background: #000;
+  padding: 2em 1em;
+  font-family: helvetica, sans-serif;
+  @include border-radius(5px);
+  
+  label {
+    color: #fff;
+    margin: 0 3% .25em;
+    display: block;
+    font-family: helvetica, sans-serif;
+  }
+  
+  input {
+    width: 94%;
+    padding: .5em .25em;
+    margin: 0 3% 1em;
+    font-size: 1.2em;
+    border: 2px solid #000;
+    outline: none;
+    @include trans(all, .25s);
+    @include border-radius(5px);
+    
+    &.password {
+      padding-right: 4rem;
+    }
+
+  }
+  
+  input:focus {
+     border: 2px solid $maincolor;
+  }
+  
+  button {
+    width: 94%;
+    margin: 2em 3% 0;
+    border: none;
+    background: $maincolor;
+    padding: 1em 0;
+    font-size: 1.25em;
+    clear: both;
+    color: #000;
+    @include border-radius(5px);
+    outline: none;
+    @include trans(all, .25s);
+    cursor: pointer;
+  }
+  
+  button:focus,button:hover {
+    background: $maincolor2;
+  }
+}
+.hide-show{
+  width: 94%;
+  margin: -3.62em 3% 0 1.5%;
+  position: relative;
+  z-index: 5;
+  display: none;
+ 
+  span {
+    background: $maincolor;
+    font-size: 1em;
+    padding: .5em;
+    float: right;
+    @include border-radius(5px);
+    cursor: pointer;
+  }
+}
+
+
+<div class="login_form">
+  <setion class="login-wrapper">
+    
+    <div class="logo">
+     <a target="_blank" rel="noopener" href="https://unrealnavigation.com">
+     <img src="https://unrealnavigation.com/_themes/unrealnavigation/img/unreal-navigation-logo.png?v=1474018625" alt=""></a>
+    </div>
+    
+    <form id="login" method="post" action="#">
+     
+      <label for="username">User Name</label>
+      <input  required name="login[username]" type="text" autocapitalize="off" autocorrect="off"/>
+      
+      <label for="password">Password</label>
+      <input class="password" required name="login[password]" type="password" />
+      <div class="hide-show">
+        <span>Show</span>
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
+    
+  </section>
+</div>
