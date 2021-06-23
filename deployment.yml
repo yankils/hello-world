@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: website
+spec:
+  replicas: 1
+  selector:
+    app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - image: aravind2389/website
+        name: website
+        ports:
+        - containerPort: 8080  
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: website
+spec:
+  type: NodePort
+  ports:
+    - port: 8092
+      targetPort: 8080
+  selector:
+    app: website
