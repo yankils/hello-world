@@ -24,7 +24,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8092
+    - port: 8090
       targetPort: 8080
   selector:
     app: website
