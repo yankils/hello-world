@@ -14,7 +14,7 @@ environment{
            steps{
                sshagent(['']) {
     sh """
-    scp -o StrictHostKeyChecking=no target/webapp.war ec2-user@172.31.1.101:/opt/tomcat/webapps/
+    scp -o StrictHostKeyChecking=no webapp.war ec2-user@172.31.1.101:/opt/tomcat/webapps/
     ssh ec2-user@172.31.1.101 /opt/tomcat/bin/shutdown.sh
     ssh ec2-user@172.31.1.101 /opt/tomcat/bin/startup.sh
     """
