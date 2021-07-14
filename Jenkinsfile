@@ -9,12 +9,7 @@ environment{
                 git credentialsId:'github', url:'https://github.com/MonikaTrajkovska/hello-world.git'
             }
         }
-        stage("Maven Build"){
-            steps{
-                sh "mvn clean package"
-                sh "mv *.war webapp.war"
-            }
-        }
+        
         stage("deploy-dev"){
            steps{
                sshagent(['']) {
