@@ -12,7 +12,7 @@ environment{
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
-                sh "mv /*.war /webapp.war"
+                sh "mv *.war webapp.war"
             }
         }
         stage("deploy-dev"){
