@@ -9,12 +9,12 @@ environment{
                 git credentialsId:'github', url:'https://github.com/MonikaTrajkovska/hello-world.git'
             }
         }
-        stage("Maven Build"){
-            steps{
-                sh "mvn clean package"
-                sh "mv target/*.war target/webapp.war"
-            }
-        }
+        // stage("Maven Build"){
+        //     steps{
+        //         sh "mvn clean package"
+        //         sh "mv target/*.war target/webapp.war"
+        //     }
+        // }
         stage("deploy-dev"){
            steps{
                sshagent(['tomcat-new']) {
