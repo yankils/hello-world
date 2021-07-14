@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    tools { 
-        maven 'M2_HOME' 
-         
+    tools {
+        maven 'M2_HOME'
+        
     }
     stages {
         stage ('Initialize') {
@@ -10,13 +10,18 @@ pipeline {
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                '''
             }
         }
 
         stage ('Build') {
             steps {
-                echo 'This is a minimal pipeline.'
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
             }
         }
     }
