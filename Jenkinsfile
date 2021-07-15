@@ -18,7 +18,7 @@ environment{
         stage("deploy-dev"){
            steps{
               sshagent(['deploy_user']) {
-   sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.138.105.110:/opt/tomcat/webapp"
+   sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.138.105.110:/opt/tomcat/webapps"
 
 
 } 
