@@ -218,6 +218,7 @@
                 </sonar.host.url>
             </properties>
         </profile>
+         </profiles>
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
     <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
