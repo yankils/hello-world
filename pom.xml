@@ -206,6 +206,11 @@
     </dependencies>
   </dependencyManagement>
 <profiles>
+       <settings>
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
         <profile>
             <id>sonar</id>
             <activation>
@@ -214,10 +219,12 @@
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                   http://18.188.206.88:9000/
+                  http://18.188.206.88:9000/
                 </sonar.host.url>
             </properties>
         </profile>
+     </profiles>
+</settings>
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
     <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
