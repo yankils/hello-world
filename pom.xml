@@ -205,7 +205,19 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
+<profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                   http://18.188.206.88:9000/
+                </sonar.host.url>
+            </properties>
+        </profile>
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
     <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
