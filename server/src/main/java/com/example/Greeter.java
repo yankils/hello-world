@@ -14,10 +14,7 @@ public class Greeter {
 
   //TODO: Add javadoc comment
   public String greet(String someone) {
-  int j;
-while (true) { 
-  j++;
-}
+
     return String.format("Hello, %s!", someone);
   
 
