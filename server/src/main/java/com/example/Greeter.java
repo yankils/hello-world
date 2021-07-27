@@ -14,6 +14,9 @@ public class Greeter {
 
   //TODO: Add javadoc comment
   public String greet(String someone) {
-    return String.format("Hello, %s!", someon);
+    boolean a=true;
+    var b =15;
+    a && b;
+    return String.format("Hello, %s!", someone);
   }
 }
