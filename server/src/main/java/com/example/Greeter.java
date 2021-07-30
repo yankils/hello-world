@@ -13,8 +13,12 @@ public class Greeter {
   }
 
   //TODO: Add javadoc comment
-  public String greet(String someone) {
-Pattern.compile("(?=a)b")
+  public Striint k;
+boolean b = true;
+while (b) { // Noncompliant; b never written to in loop
+  k++;
+}ng greet(String someone) {
+
     return String.format("Hello, %s!", someone);
   
 
