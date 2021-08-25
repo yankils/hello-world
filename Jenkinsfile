@@ -3,7 +3,7 @@ pipeline {
   agent any
 
   tools{
-   maven 'Maven'
+   maven 'MAVEN_HOME'
   }
   stages{
     stage('Intialize'){
