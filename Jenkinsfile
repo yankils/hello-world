@@ -23,7 +23,7 @@ pipeline {
     stage('Deploy-Tomcat'){
         steps{
             /*sshagent('tomcat'){ */
-                sh 'cp -r /var/lib/jenkins/workspace/Mave-Project/webapp/target/*.war /opt/apache-tomcat-9.0.52/webapps/'
+                sh 'sudo cp -r /var/lib/jenkins/workspace/Mave-Project/webapp/target/*.war /opt/apache-tomcat-9.0.52/webapps/'
             /*}*/
             
         }
