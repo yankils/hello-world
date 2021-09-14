@@ -13,10 +13,10 @@ pipeline {
 			}	
 		}
 				
-		stage("Checkout MTW repo"){
+		stage("Checkout TCI repo"){
 			steps{
 				script {
-					checkout([$class: 'GitSCM', branches: [[name: '*/prod'], [name: '*/preprod'], [name: '*/test'], [name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:MonikaTrajkovska/hello-world.git']]])
+					checkout([$class: 'GitSCM', branches: [[name: '*/prod'], [name: '*/preprod'], [name: '*/test'], [name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/MonikaTrajkovska/hello-world.git']]])
 				}
 			}
 		}
@@ -25,7 +25,7 @@ pipeline {
 		    steps {
 				script {
 
-					sh "git@github.com:MonikaTrajkovska/Ansible.git"
+					sh "https://github.com/MonikaTrajkovska/Ansible.git"
 				}
 			}
 		}
