@@ -45,8 +45,9 @@ pipeline {
                    }
 					else if (env.BRANCH_NAME == 'prod'){
 						sh "git checkout prod"
-                   }
-					sh "${env.mvn} --settings ${env.WORKSPACE}/.mvn/settings.xml -f ${env.WORKSPACE}/pom.xml clean package" 
+                   }                    
+					def mvnSetting= '/usr/share/maven/conf'
+					sh "mvn clean install --settings ${mvnSetting} -P foo" 
 				}
 			}
 		}
