@@ -25,7 +25,7 @@ pipeline {
 		    steps {
 				script {
 
-					sh "https://github.com/MonikaTrajkovska/Ansible.git"
+					sh "git clone git@github.com:MonikaTrajkovska/Ansible.git"
 				}
 			}
 		}
