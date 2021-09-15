@@ -46,7 +46,7 @@ pipeline {
 					else if (env.BRANCH_NAME == 'prod'){
 						sh "git checkout prod"
                    }
-					sh "ant -v war -f ${env.WORKSPACE}/pom.xml" 
+					sh "ant -v war -f ${env.WORKSPACE}/build.xml" 
 				}
 			}
 		}
