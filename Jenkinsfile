@@ -46,7 +46,7 @@ pipeline {
 					else if (env.BRANCH_NAME == 'prod'){
 						sh "git checkout prod"
                    }                    
-					def mvnSetting= '/.m2'
+					def mvnSetting= '/root/.m2'
 					sh "mvn clean install --settings ${mvnSetting} -P foo" 
 				}
 			}
