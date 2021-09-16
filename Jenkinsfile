@@ -6,7 +6,7 @@ pipeline {
 	}
 
 	environment {
-    	mvn = "/opt/maven/conf"
+    	mvn = "/opt/maven"
     }
 	
 	stages {
