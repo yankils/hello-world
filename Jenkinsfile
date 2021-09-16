@@ -46,7 +46,7 @@ pipeline {
 					else if (env.BRANCH_NAME == 'prod'){
 						sh "git checkout prod"
                    }                    
-					def mvnSetting= '/opt/maven/conf'
+					def mvnSetting= '/opt/maven'
 					sh "mvn clean install --settings ${mvnSetting} -P foo" 
 				}
 			}
