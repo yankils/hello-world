@@ -4,6 +4,10 @@ pipeline {
 			label 'master'
 		}
 	}
+
+	environment {
+    	mvn = "/opt/mvn"
+    }
 	
 	stages {
 	
@@ -13,10 +17,10 @@ pipeline {
 			}	
 		}
 				
-		stage("Checkout TCI repo"){
+		stage("Checkout RFG repo"){
 			steps{
 				script {
-					checkout([$class: 'GitSCM', branches: [[name: '*/prod'], [name: '*/preprod'], [name: '*/test'], [name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/MonikaTrajkovska/hello-world.git']]])
+					checkout([$class: 'GitSCM', branches: [[name: '*/prod'], [name: '*/preprod'], [name: '*/test'], [name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:MonikaTrajkovska/hello-world.git']]])
 				}
 			}
 		}
@@ -25,11 +29,31 @@ pipeline {
 		    steps {
 				script {
 
-					sh "git clone git@github.com:MonikaTrajkovska/Ansible.git"
+                                       sh "git clone git@github.com:MonikaTrajkovska/Ansible.git"
 				}
 			}
 		}
 		
+		stage ("Build") {
+			steps {
+				script {
+					sh "echo ${env.BRANCH_NAME}"
+					if (env.BRANCH_NAME == 'develop') {
+						sh "git checkout develop"
+                   } 
+				   else if (env.BRANCH_NAME == 'test'){
+						sh "git checkout test"
+                   }
+				   	else if (env.BRANCH_NAME == 'preprod'){
+						sh "git checkout preprod"
+                   }
+					else if (env.BRANCH_NAME == 'prod'){
+						sh "git checkout prod"
+                   }
+				    sh "${env.mvn} --settings ${env.WORKSPACE}/settings.xml -f ${env.WORKSPACE}/pom.xml clean package"
+				}
+			}
+		}
 		stage ("Build") {
 			steps {
 				script {
