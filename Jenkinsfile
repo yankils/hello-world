@@ -54,27 +54,7 @@ pipeline {
 				}
 			}
 		}
-		stage ("Build") {
-			steps {
-				script {
-					sh "echo ${env.BRANCH_NAME}"
-					if (env.BRANCH_NAME == 'develop') {
-						sh "git checkout develop"
-                   } 
-				   else if (env.BRANCH_NAME == 'test'){
-						sh "git checkout test"
-                   }
-				   	else if (env.BRANCH_NAME == 'preprod'){
-						sh "git checkout preprod"
-                   }
-					else if (env.BRANCH_NAME == 'prod'){
-						sh "git checkout prod"
-                   }                    
-					def mvnSetting= '/opt/maven'
-					sh "mvn clean install --settings ${mvnSetting} -P foo" 
-				}
-			}
-		}
+		
 		stage("Deploy") {
             steps {
                 script {
