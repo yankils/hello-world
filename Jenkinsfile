@@ -26,7 +26,7 @@ pipeline {
                /* sh 'sudo cp -r /var/lib/jenkins/workspace/Mave-Project/webapp/target/*.war /opt/apache-tomcat-9.0.52/webapps/'*/
             /*}*/
              sshagent(['deployer']) {
-          sh 'sudo scp -o StrictHostKeyChecking=no target/webapp.war  ec2-user@65.0.92.55:/opt/apache-tomcat-9.0.52/webapps/'
+          sh 'sudo scp -o StrictHostKeyChecking=no target/webapp.war  ec2-user@13.127.246.35:/home/ec2-user/apache-tomcat-8.5.71/webapps/'
           }
             
         }
