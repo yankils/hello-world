@@ -2,5 +2,5 @@
 <!-- <h2> Deploying on a kubernetes using ansible for Valaxy Technologies </h2> -->
 <!-- <h2> Glad to see you here </h2> -->
 <h2> Love you chitti </h2>
-<h2> Deployed from jenkins to tomcat, changed locallly auto build trigger happend </h2>
+<h2> Deployed from jenkins to tomcat, changed locally auto build trigger happend </h2>
 
