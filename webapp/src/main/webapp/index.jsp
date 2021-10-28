@@ -3,5 +3,5 @@
 <!-- <h2> Glad to see you here </h2> -->
 <h2> Love you chitti pichhi ammulu  </h2>
 <h2> this change for docker container deployment  </h2>
-<h2> Deployed from jenkins to tomcat, changed locally auto build trigger happend </h2>
+<h2> Deploying on container from jenkins through ansible </h2>
 
