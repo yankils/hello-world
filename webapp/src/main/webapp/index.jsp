@@ -135,7 +135,7 @@ input[type=submit]:hover {
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h2>Welcome to MyWebsite</h2>
 <p>Resize the browser window to see the responsive effect. When the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
 <div class="container">
