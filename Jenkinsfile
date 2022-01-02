@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Welcome Step') {
             steps { 
-                echo 'Hi Welcome to LambdaTest.....'
+                echo 'Hi hello Welcome to LambdaTest.....'
             }
         }
     }
