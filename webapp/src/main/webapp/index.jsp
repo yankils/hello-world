@@ -4,9 +4,11 @@
 
     <label for="name">Name: </label>
     <input type="text" value="Name" name="Name" />
+    <br
 
     <label for="email">Email: </label>
     <input type="email" value="Email" name="Email" />
+    <br
 
     <label>Button: </label>
     <input type="button" value="Button" name="button" />
