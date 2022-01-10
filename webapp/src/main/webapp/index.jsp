@@ -5,4 +5,4 @@
 <h2> this change for docker container deployment  </h2>
 <h2> Deploying on container from jenkins through ansible </h2>
 <h2> deploy oon container </h2>
-<h2> along with Nexus repository </h2>
+<h2> along with Nexus repository  </h2>
