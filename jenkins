@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_HOST = '18.191.213.43'
+        DOCKER_HOST = '3.141.152.90'
     }
 
     tools {
