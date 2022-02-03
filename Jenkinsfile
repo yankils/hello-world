@@ -31,6 +31,7 @@ pipeline {
             remote.allowAnyHosts = true
 
             sshPut remote: remote, from: 'webapp/target/webapp.war', into: '.'
+            sshCommand remote: remote, command: "docker build -t tomcat-pipeline ."
           }
         }
         echo 'Done succesfully'
