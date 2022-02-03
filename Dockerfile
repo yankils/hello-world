@@ -1,4 +1,10 @@
 FROM tomcat:latest
-RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
-COPY ./*.war /usr/local/tomcat/webapps
 
+MAINTAINER Abiodun Sam
+
+RUN cd /usr/local/tomcat/
+RUN mv webapps webapps2
+RUN mv webapps.dist/ webapps
+
+COPY ./webapp.war /usr/local/tomcat/
+COPY ./webapp.war /usr/local/tomcat/webapps
