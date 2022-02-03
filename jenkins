@@ -24,7 +24,7 @@ pipeline {
         script {
           withCredentials([usernamePassword(credentialsId: 'docker_id', passwordVariable: 'pwd', usernameVariable: 'user')]) {
             remote = [:]
-            remote.name = 'dockeradmin'
+            remote.name = "${ user }"
             remote.host = "${ DOCKER_HOST }"
             remote.user = "${ user }"
             remote.password = "${ pwd }"
