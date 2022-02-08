@@ -3,7 +3,7 @@
 
 <h3>Modified Docker file to deploy app on tomcat server root</h3>
 <h3>All is well, even inside well!</h3>
-<code>
+<pre>
  FROM tomcat:latest
 
 MAINTAINER Abiodun Sam
@@ -14,4 +14,4 @@ MAINTAINER Abiodun Sam
 
 COPY ./ROOT.war /usr/local/tomcat/webapps
 
- </code>
+ </pre>
