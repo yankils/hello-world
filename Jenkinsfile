@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_HOST = '3.23.126.62'
+        ANSIBLE_HOST = '18.222.198.27'
     }
 
     tools {
@@ -22,10 +22,10 @@ pipeline {
         stage('Deplying to Docker server') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: 'docker_id', passwordVariable: 'pwd', usernameVariable: 'user')]) {
+          withCredentials([usernamePassword(credentialsId: 'ansible', passwordVariable: 'pwd', usernameVariable: 'user')]) {
             remote = [:]
             remote.name = "${ user }"
-            remote.host = "${ DOCKER_HOST }"
+            remote.host = "${ ANSIBLE_HOST }"
             remote.user = "${ user }"
             remote.password = "${ pwd }"
             remote.allowAnyHosts = true
