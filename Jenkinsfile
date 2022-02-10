@@ -35,8 +35,7 @@ pipeline {
             //this will only work on the first run, else fail due to duplicate docker name
             //else ansible will be integrated in the next step
             sshCommand remote: remote, command: "mv webapp.war ROOT.war"
-            sshCommand remote: remote, command: "docker build -t tomcat-pipeline ."
-            sshCommand remote: remote, command: "docker run --name tomcat-pipeline -p80:8080 -d tomcat-pipeline"
+            sshCommand remote: remote, command: "ansible-playbook -i hosts simple-ansible.yml"
           }
         }
         echo 'Done succesfully'
