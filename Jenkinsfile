@@ -22,7 +22,7 @@ pipeline {
         stage('Deplying to Docker server') {
       steps {
         script {
-          withCredentials([usernamePassword(credentialsId: 'ansible', passwordVariable: 'pwd', usernameVariable: 'user')]) {
+          withCredentials([usernamePassword(credentialsId: 'ansible-server', passwordVariable: 'pwd', usernameVariable: 'user')]) {
             remote = [:]
             remote.name = "${ user }"
             remote.host = "${ ANSIBLE_HOST }"
