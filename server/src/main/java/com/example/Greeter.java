@@ -6,7 +6,7 @@ package com.example;
 public class Greeter {
 
   /**
-   * This is a constructor classssssss .sss
+   * This is a constructor classsssssggs .sss
    */
   public Greeter() {
 
