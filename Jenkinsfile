@@ -1,20 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage ('git-checkout') {
             steps {
-                echo 'Hello World'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'testing'
-            }
-        }
-                stage('deploy') {
-                    steps {
-                        echo 'deploying'
+                 git 'https://github.com/Krishdevops012/hello-world.git'
             }
         }
     }
 }
+                
+                
