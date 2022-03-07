@@ -6,7 +6,7 @@ pipeline {
                  https://github.com/Krishdevops012/hello-world.git
             }
         }
-        stage('environment-setting') {
+        stage ('environment-setting') {
             steps  {
                 script {
                     env,BUILD='yes' // Setting env variable for build
@@ -14,7 +14,7 @@ pipeline {
             }
             
         }
-        stages('build') {
+        stage ('build') {
             when {environment name: 'BUILD', value: 'yes')
                   steps {
                       echo "Building artifacts..."
