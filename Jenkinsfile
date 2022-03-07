@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Example Build') {
             steps {
@@ -8,12 +8,15 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
-                branch 'production'
-                environment name: 'DEPLOY_TO', value: 'production'
+                beforeOptions true
+                branch 'testing'
+            }
+            options {
+                lock label: 'testing-deploy-envs', quantity: 1, variable: 'deployEnv'
             }
             steps {
-                echo 'Deploying'
+                echo "Deploying to ${deployEnv}"
             }
         }
     }
-}       
+}  
