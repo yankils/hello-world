@@ -1,19 +1,18 @@
-matrix {
-    axes {
-        axis {
-            name 'PLATFORM'
-            values 'linux', 'mac', 'windows'
-        }
-    }
+pipeline {
+    agent any
     stages {
-        stage('build') {
-            // ...
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
         }
-        stage('test') {
-            // ...
-        }
-        stage('deploy') {
-            // ...
+        stage('Example Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploying'
+            }
         }
     }
 }
