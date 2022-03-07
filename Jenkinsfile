@@ -9,7 +9,7 @@ pipeline {
         stage ('environment-setting') {
             steps  {
                 script {
-                    env,BUILD='yes' // Setting env variable for build
+                    env.BUILD='yes' // Setting env variable for build
                 }
             }
             
@@ -17,8 +17,8 @@ pipeline {
         stage ('build') {
             when {environment name: 'BUILD', value: 'yes')
                   steps {
-                      echo "Building artifacts..."
-                      sh "mvn clean package"
+                      echo 'Building artifacts...'
+                      sh 'mvn clean package'
                   }   
                   }
     }
