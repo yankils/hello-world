@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('git-checkout') {
             steps {
-                 git 'https://github.com/Krishdevops012/hello-world.git'
+                 https://github.com/Krishdevops012/hello-world.git
             }
         }
         stage('environment-setting') {
