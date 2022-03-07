@@ -1,27 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage ('git-checkout') {
+        stage('Example Build') {
             steps {
-                 https://github.com/Krishdevops012/hello-world.git
+                echo 'Hello World'
             }
         }
-        stage ('environment-setting') {
-            steps  {
-                script {
-                    env.BUILD='yes' // Setting env variable for build
-                }
+        stage('Example Deploy') {
+            when {
+                branch 'production'
             }
-            
+            steps {
+                echo 'Deploying'
+            }
         }
-        stage ('build') {
-            when {environment name: 'BUILD', value: 'yes')
-                  steps {
-                      echo 'Building artifacts...'
-                      sh 'mvn clean package'
-                  }   
-                  }
     }
-}
-                
+}           
                 
