@@ -6,6 +6,21 @@ pipeline {
                  git 'https://github.com/Krishdevops012/hello-world.git'
             }
         }
+        stage('environment-setting') {
+            steps  {
+                script {
+                    env,BUILD='yes' // Setting env variable for build
+                }
+            }
+            
+        }
+        stages('build') {
+            when {environment name: 'BUILD', value: 'yes')
+                  steps {
+                      echo "Building artifacts..."
+                      sh "mvn clean package"
+                  }   
+                  }
     }
 }
                 
