@@ -1,2 +1,2 @@
-<h1> Hello-Everyone	 !!   </h1>
-<h2> WELCOME  </h2>
+<h1> Hello-Guys	 !!   </h1>
+<h2> WELCOME  TO DEVOPS</h2>
