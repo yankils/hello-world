@@ -1,3 +1,2 @@
-<h1> Hello-Guys	 !!   </h1>
-<h2> WELCOME  TO DEVOPS</h2>
-<h3> Your are the part of into devops team<h3>
+<h1> Good Morning Everyone	 !!   </h1>
+<h2> WELCOME  TO DEVOPS LEARNING</h2>
