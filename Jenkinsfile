@@ -22,12 +22,12 @@ pipeline {
     }
     stage('Deploy-Tomcat'){
         steps{
-            sshagent(['tomcat']){ 
-                sh 'sudo cp -r /var/lib/jenkins/workspace/Mave-Project/webapp/target/*.war /opt/apache-tomcat-9.0.52/webapps/'
-            }
-             /*/sshagent(['tomcat']) {*/
-          /*sh 'sudo scp -o StrictHostKeyChecking=no target/webapp.war  ec2-user@13.233.115.142:/home/ec2-user/apache-tomcat-8.5.71/webapps/'*/
-          /*}*/
+           /*/ sshagent(['tomcat']){ */
+            /*/    sh 'sudo cp -r /var/lib/jenkins/workspace/Mave-Project/webapp/target/*.war /opt/apache-tomcat-9.0.52/webapps/'*/
+          /*  }*/
+             sshagent(['tomcat']) {
+         sh 'sudo scp -o StrictHostKeyChecking=no target/webapp.war  ec2-user@3.109.184.32:/opt/apache-tomcat-9.0.60/webapps/'
+          }
             
         }
     }         
