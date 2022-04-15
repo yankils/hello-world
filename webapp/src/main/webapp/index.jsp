@@ -1,7 +1,7 @@
 i<form action="action_page.php">
   <div class="container">
-	  <h1>welcome to CVS ORIMADEGUN SAHEED ADENIYI ...We are happy to have you.</h1>
-    <p>Please fill in this form to create an account.</p>
+	  <h1>Welcome to CVS ORIMADEGUN SAHEED ADENIYI ...We are happy to have you.</h1>
+    <p>Please fill in this form to create a CVS Enterprise account.</p>
     <hr>
      
     <label for="Name"><b>Enter Name</b></label>
