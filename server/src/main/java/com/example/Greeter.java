@@ -1,4 +1,4 @@
-package com.example;
+package com.test;
 
 /**
  * This is a class.
