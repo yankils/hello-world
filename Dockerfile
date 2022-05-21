@@ -1,5 +1,5 @@
 FROM centos
-RUN yum install java -y
+RUN yum amazon-linux-extras install java-openjdk11 -y
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.63/bin/apache-tomcat-9.0.63.tar.gz /opt/tomcat
