@@ -1,4 +1,4 @@
-apiVersion: apps/V1 
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: ecr-regapp
@@ -30,7 +30,7 @@ spec:
 
 ---
 
-apiVersion: V1
+apiVersion: v1
 kind: Service
 metadata:
   name: ecr-service
