@@ -1,14 +1,14 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>New user Register for DevOps supercoolinfrastructure</h1>
+    <h1>New user Register for DevOps supercoolinfrastructurreee</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
-    <label for="Name"><b>Enter your fucking  Name</b></label>
+    <label for="Name"><b>Enter your  Name</b></label>
     <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
     <br>
     
-    <label for="mobile"><b>Enter your girlfriend mobile</b></label>
+    <label for="mobile"><b>Enter your  mobile</b></label>
     <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
     <br>
 
