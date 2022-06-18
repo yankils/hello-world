@@ -71,7 +71,7 @@ a {
 
 <form action="/action_page.php">
   <div class="container">
-    <h1>Devops project Register</h1>
+    <h1>My DevOps Project Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
