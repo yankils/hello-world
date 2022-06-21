@@ -1,5 +1,7 @@
 <form action="action_page.php">
   <div class="container">
+    <h1 align="center"> Build Using Maven And Deployed on Docker Container</h1>
+    <br> <hr> <br>
     <h1> <b> UpDated </b> Registration Page for DevOps Learning</h1>
     <p>Please fill in this <b> UpDated </b>form to create an account.</p>
     <hr>
