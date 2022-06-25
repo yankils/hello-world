@@ -1,0 +1,11 @@
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  merge_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if the pull request is mergeable to master
+        run: |
+             if [[ "$GITHUB_HEAD_REF" == 'develop' ]]; then exit 0; else exit 1; fi;
