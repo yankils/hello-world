@@ -178,7 +178,7 @@
 			<div class="logo">
 				<img src= "logo.png">
 			</div>
-			<li><a href="#web">Web Technology</a></li>
+			<li><a href="#web">Arshad Web Technology company</a></li>
 			<li><a href="#program">C Programming</a></li>
 			<li><a href="#course">Courses</a></li>
 		</ul>
