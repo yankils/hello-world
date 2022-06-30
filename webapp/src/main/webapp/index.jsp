@@ -179,6 +179,8 @@
 				<img src= "logo.png">
 			</div>
 			<li><a href="#web">Arshad Web Technology company</a></li>
+			<li><a href="#web">Ahmed is also the part of this tech program</a></li>
+			<li><a href="#web">Anabia is aslo the part of this tech program</a></li>
 			<li><a href="#program">C Programming</a></li>
 			<li><a href="#course">Courses</a></li>
 		</ul>
