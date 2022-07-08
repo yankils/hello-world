@@ -4,8 +4,13 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
 
+<<<<<<< HEAD
     <label for="email"><b>Name</b></label>
     <input type="text" placeholder="Enter Email" name="Harish pappu" id="email" required>
+=======
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="Enter email" id="email" required>
+>>>>>>> 3d0aea0e46a3c49365b9e06590e849084d844c05
 <br>
 
     <label for="psw"><b>Password</b></label>
