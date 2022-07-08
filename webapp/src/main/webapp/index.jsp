@@ -5,7 +5,7 @@
     <hr>
 
 <<<<<<< HEAD
-    <label for="email"><b>Name</b></label>
+    <label for="email"><b>name</b></label>
     <input type="text" placeholder="Enter Email" name="Harish pappu" id="email" required>
 =======
     <label for="email"><b>Email</b></label>
