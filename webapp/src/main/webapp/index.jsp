@@ -6,7 +6,7 @@
 
 <<<<<<< HEAD
     <label for="email"><b>name</b></label>
-    <input type="text" placeholder="Enter Email" name="Harish pappu" id="email" required>
+    <input type="text" placeholder="Enter Email correct" name="Harish pappu" id="email" required>
 =======
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="Enter email" id="email" required>
