@@ -16,7 +16,7 @@ spec:
       labels:
         app: regapp
     spec:
-      containers:
+      Containers:
       - name: regapp
         image: valaxy/regapp
         imagePullPolicy: Always
