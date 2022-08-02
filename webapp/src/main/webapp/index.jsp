@@ -1,6 +1,7 @@
 <form action="action_page.php">
   <div class="container">
     <h1>New user Register for DevOps por Alejandro Mercado</h1>
+    <h2>Dynatrace Cloud Automation Demo</h2>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
