@@ -9,11 +9,11 @@
     <br>
     
     <label for="mobile"><b>Enter mobile</b></label>
-    <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
+    <input type="text" placeholder="Enter mobile number" name="mobile" id="mobile" required>
     <br>
 
     <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <input type="text" placeholder="Enter Email ID" name="email" id="email" required>
     <br>
 
     <label for="psw"><b>Password</b></label>
