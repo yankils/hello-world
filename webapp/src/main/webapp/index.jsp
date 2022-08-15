@@ -13,7 +13,7 @@
     <br>
 
     <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter your Email ID" name="email" id="email" required>
+    <input type="text" placeholder="Enter your own Email ID" name="email" id="email" required>
     <br>
 
     <label for="psw"><b>Password</b></label>
