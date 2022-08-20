@@ -1,7 +1,7 @@
 <form action="action_page.php">
   <div class="container">
     <h1>New user Register for DevOps Learning to deploy app to kubernetes</h1>
-    <p>Please fill in this form to create an account.</p>
+    <p>Please fill in the below form</p>
     <hr>
      
     <label for="Name"><b>Enter Full Name</b></label>
