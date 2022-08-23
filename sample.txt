@@ -1,0 +1,2 @@
+Hi this is new file added to the branch just now created
+to test all Git commands in this repository
