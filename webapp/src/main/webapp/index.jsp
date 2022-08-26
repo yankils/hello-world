@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>This is ansible session 26 Aug _7:44:try Register for DevOps Learning</h1>
+    <h1>This is ansible session 26 Aug _We have done it at last:try Register for DevOps Learning</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
