@@ -2,6 +2,7 @@
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
+    <p>Let us know if you need any help. Call us on 5593909560 or email at asangarf@gmail.com.</p>
     <hr>
 
     <label for="email"><b>Email</b></label>
@@ -19,6 +20,6 @@
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? Let us know what you want to do next <a href="#">Sign in</a>.</p>
   </div>
 </form>
