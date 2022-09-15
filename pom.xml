@@ -208,9 +208,9 @@
 
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
-    <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:yankils/maven-project.git</developerConnection>
     <tag>HEAD</tag>
-    <url>http://github.com/jleetutorial/maven-project</url>
+    <url>https://github.com/yankils/hello-world.git</url>
   </scm>
 
   <prerequisites>
