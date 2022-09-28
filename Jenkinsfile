@@ -2,9 +2,7 @@ timestamps {
  timeout(time: 60, unit: 'SECONDS') {
  
 node
-{
-  
-       
+{   
     try{
      /*  
         def jobname = env.JOB_NAME
@@ -40,9 +38,6 @@ properties([
    ])
 
 }
-
-
- 
   echo "GitHub BranhName ${env.BRANCH_NAME}"
   echo "Jenkins Job Number ${env.BUILD_NUMBER}"
   echo "Jenkins Node Name ${env.NODE_NAME}"
@@ -55,7 +50,7 @@ properties([
  
  stage('CheckoutCode')
   {
-  git branch: 'master', credentialsId: '235e277e-7cf7-495e-b970-a22c2478d48c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+  git branch: 'master', credentialsId: '235e277e-7cf7-495e-b970-a22c2478d48c', url: 'https://github.com/gln4u/hello-world.git'
   }
  
 
