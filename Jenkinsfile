@@ -22,7 +22,7 @@ pipeline {
                 // Run Maven on a Unix agent.
                 sh "mvn clean package"
 
-            }
+	    } }
 				stage('Print Msg'){
 	    steps {
               
@@ -31,8 +31,7 @@ pipeline {
 
 	    } }
 
-            
-            }
+           
 			stage('Deploy') {
             steps {
               
