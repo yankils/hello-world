@@ -23,12 +23,13 @@ pipeline {
                 sh "mvn clean package"
 
             }
+				stage('Print Msg'){
 	    steps {
               
                 // Run Maven on a Unix agent.
                 echo "This is End Of Pipeline"
 
-            }
+	    } }
 
             
             }
