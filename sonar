@@ -41,10 +41,10 @@ pipeline {
             }
             steps {
                withSonarQubeEnv('sonar') {
-                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
-                   -Dsonar.projectName=vprofile \
+                   sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=webapp \
+                   -Dsonar.projectName=webapp \
                    -Dsonar.projectVersion=1.0 \
-                   -Dsonar.sources=src/ \
+                   -Dsonar.sources=webapp/ \
                    -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
                    -Dsonar.junit.reportsPath=target/surefire-reports/ \
                    -Dsonar.jacoco.reportsPath=target/jacoco.exec \
