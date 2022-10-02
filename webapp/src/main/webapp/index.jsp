@@ -157,7 +157,7 @@
         </div>
         <hr>
         <div class="btn-block">
-          <p>By clicking Register, you agree on our <a href="https://www.wokefolks.com/privacy-policy">Privacy Policy.</p>
+          <p>By clicking Register, you agree on our <a href="https://www.wokefolks.com">Privacy Policy.</p>
           <button type="submit" href="/">Submit</button>
         </div>
       </form>
