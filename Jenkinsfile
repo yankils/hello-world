@@ -1,8 +1,4 @@
-timestamps {
- timeout(time: 60, unit: 'SECONDS') {
- 
-node{   
-    try{ 
+node{    
         def jobname = env.JOB_NAME
         def buildnum = env.BUILD_NUMBER.toInteger()
         def job = Jenkins.instance.getItemByFullName(jobname)
@@ -10,7 +6,7 @@ node{
              if (!build.isBuilding()) { continue; }
              if (buildnum == build.getNumber().toInteger()) { continue; println "equals" }
              build.doStop();
-       }
+       
      if (env.BRANCH_NAME=='master'){
              echo "GitHub BranhName ${env.BRANCH_NAME}"
              properties([
