@@ -41,5 +41,35 @@ pipeline {
 				echo 'bug'
 			}
 		}
+		stage('kubernets'){
+			steps {
+				echo 'kubernets'
+			}
+		}
+		stage('kubernets deployment'){
+			steps {
+				echo 'kubernets development'
+			}
+		}
+		stage('artifacts'){
+			steps {
+				echo 'artifacts'
+			}
+		}
+		stage('live environment'){
+			steps {
+				echo 'live environment'
+			}
+		}
+		stage('live deployment'){
+			steps {
+				echo 'live deployment'
+			}
+		}
+		stage('prod deployment'){
+			steps {
+				echo 'prod deployment'
+			}
+		}
     }
 }

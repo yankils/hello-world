@@ -36,5 +36,10 @@ pipeline {
 				echo 'docker image'
 			}
 		}
+		stage('bug'){
+			steps {
+				echo 'bug'
+			}
+		}
     }
 }
