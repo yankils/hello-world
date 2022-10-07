@@ -13,12 +13,12 @@ pipeline {
         }
         stage('compile'){
             steps {
-                ech0 'mvn clean package'
+                sh 'mvn clean package'
             }
         }
         stage('deployment'){
             steps {
-                echo 'mvn deploy'
+                sh 'mvn deploy'
             }
         }
 		 stage('docker'){
