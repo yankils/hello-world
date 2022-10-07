@@ -1,0 +1,75 @@
+pipeline {
+    agent any
+    tools {
+    maven 'maven'
+    }
+    
+    
+    stages {
+        stage('Hello') {
+            steps {
+                git 'https://github.com/Akshatha131099/hello-world.git'
+            }
+        }
+        stage('compile'){
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('deployment'){
+            steps {
+                sh 'mvn deploy'
+            }
+        }
+		 stage('docker'){
+            steps {
+                echo 'docker
+			}
+		}
+		stage('ansible'){
+            steps {
+                echo 'ansible'
+			}
+		}
+		stage('docker image'){
+			steps {
+				echo 'docker image'
+			}
+		}
+		stage('bug'){
+			steps {
+				echo 'bug'
+			}
+		}
+		stage('kubernets'){
+			steps {
+				echo 'kubernets'
+			}
+		}
+		stage('kubernets deployment'){
+			steps {
+				echo 'kubernets development'
+			}
+		}
+		stage('artifacts'){
+			steps {
+				echo 'artifacts'
+			}
+		}
+		stage('live environment'){
+			steps {
+				echo 'live environment'
+			}
+		}
+		stage('live deployment'){
+			steps {
+				echo 'live deployment'
+			}
+		}
+		stage('prod deployment'){
+			steps {
+				echo 'prod deployment'
+			}
+		}
+    }
+}
