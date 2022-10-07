@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    tools {
+    maven 'mvn'
+    }
+
+
+    stages {
+        stage('Hello') {
+            steps {
+                git 'https://github.com/yashaswini-ltts/hello-world.git'
+            }
+        }
+        
+        stage('compile') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('deployment') {
+            steps {
+                sh 'mvn deploy'
+            }
+        }
+		stage('docker') {
+            steps {
+                sh 'mvn docker'
+            }
+        }
+		stage('ansible') {
+            steps {
+                sh 'mvn ansible'
+            }
+        }
+		stage('docker image') {
+            steps {
+                sh 'mvn docker image'
+            }
+        }
+		
+    }
+}
