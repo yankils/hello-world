@@ -4,7 +4,7 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="email"><b>Name-entry</b></label>
+    <label for="email"><b>Name-entry_vinayak</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
     <br>
 
