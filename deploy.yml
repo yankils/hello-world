@@ -25,12 +25,12 @@
     - name: Install Docker Module for Python
       pip:
         name: docker
-    - name: creating a container
-      docker_container:
-        name: demo
-        image: jayn21/demo
-        state: started
-        exposed_ports:
-          - "8080"
-        ports:
-          - "8085:8080"
+    #- name: creating a container
+     # docker_container:
+      #  name: demo
+       # image: jayn21/demo
+        #state: started
+        #exposed_ports:
+         # - "8080"
+        #ports:
+         # - "8085:8080"
