@@ -1,0 +1,30 @@
+---
+- hosts: deploy
+  become: yes
+  tasks:
+    - name: install docker
+      shell: |
+        sudo apt update
+        sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        sudo apt update
+        apt-cache policy docker-ce
+        sudo apt install docker-ce -y
+    - name: stop the container
+      docker_container:
+        name: demo
+        state: stopped
+    - name: remove the container
+      docker_container:
+        name: demo
+        state: absent
+    - name: create a container
+      docker_container:
+        name: demo
+        image: tomcat:8-jre8
+        ports:
+          - 8080:8080
+        volumes:
+          - /var/lib/jenkins/workspace/sonarqube_test/webapp/target:/usr/local/tomcat/webapps
+   
