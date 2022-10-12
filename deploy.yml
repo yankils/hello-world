@@ -45,5 +45,6 @@
         name: demo
         build:
           path: .
+        source: build  
        
    
