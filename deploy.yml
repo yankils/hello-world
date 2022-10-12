@@ -44,7 +44,7 @@
       docker_image:
         name: demo
         build:
-          path: .
+          path: Dockerfile
         source: build  
        
    
