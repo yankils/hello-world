@@ -41,11 +41,7 @@
         name: docker
    
     - name: create a container
-      docker_container:
-        name: demo
-        image: tomcat:8-jre8
-        ports:
-          - 8080:8080
-        volumes:
-          - /var/lib/jenkins/workspace/sonarqube_test/webapp/target:/usr/local/tomcat/webapps
+      shell: | 
+        docker build -t demo .
+        docker run -it -p 8080:8080 --name demo demo
    
