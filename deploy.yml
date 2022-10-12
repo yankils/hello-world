@@ -25,10 +25,12 @@
     - name: Install Docker Module for Python
       pip:
         name: docker
+    - name: removing previous container
+      shell: 'docker rm demo -f'
     - name: creating a container
       docker_container:
         name: demo
-        image: jayn21/demo:1.0
+        image: jayn21/demo:latest
         state: started
         exposed_ports:
           - "8080"
