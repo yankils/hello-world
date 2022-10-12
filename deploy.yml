@@ -25,26 +25,10 @@
     - name: Install Docker Module for Python
       pip:
         name: docker
-    - name: remove docker container if any
-      shell: 'docker rm demo -f'
-    - name: remove docker image
-      docker_image:
-        name: demo
-        state: absent
-    - name: login to docker
-      shell: 'docker login -u jayn21 -p d0cker123'
-    - name: lauching a tomcat
-      docker_image:
-        build:
-          path: Dockerfile
-        name: demo
-        tag: jayn21/demo
-        push: true
-        source: build
     - name: creating a container
       docker_container:
         name: demo
-        image: demo
+        image: jayn21/demo
         state: started
         exposed_ports:
           - "8080"
