@@ -13,9 +13,7 @@ pipeline {
         stage ('code analysis'){
             steps {
                 withSonarQubeEnv('sonarqube'){
-                    withMaven(maven:'Maven 3.8.6'){
                         sh "mvn clean verify sonar:sonar -Dsonar.projectKey=devops_project"
-                    }
                 }
 
             }
