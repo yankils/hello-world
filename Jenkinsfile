@@ -13,9 +13,14 @@ pipeline {
         stage ('code analysis'){
             steps {
                 withSonarQubeEnv('sonarqube'){
-                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=devops_project"
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=devops_project"
                 }
 
+            }
+        }
+        stage ('build the binaries'){
+            steps {
+                sh "mvn clean install"
             }
         }
     }
