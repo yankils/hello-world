@@ -31,11 +31,16 @@ pipeline {
                         "files": [
                             {
                                 "pattern": "webapp/target/*.war",
-                                "target": "devops_project/snapshot-1.0-${BUILD_NUMBER}"
+                                "target": "devops_project/snapshot-1.0-${BUILD_NUMBER}/"
                             }
                         ]
                     }"""
                 )
+            }
+        }
+        stage ('deploy'){
+            steps {
+                deploy adapters: [tomcat9(credentialsId: 'tomcat_server', path: '', url: 'http://13.126.241.51:8080/')], contextPath: null, war: 'webapp/target/*.war'
             }
         }
     }
