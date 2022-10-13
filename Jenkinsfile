@@ -23,5 +23,20 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+        stage ('artifact the builds'){
+            steps{
+                rtupload (
+                    serverId: 'artifact'
+                    spec: """{
+                        "files": [
+                            {
+                                "pattern": "webapp/target/*.war",
+                                "target": "devops_project/snapshot-1.0-${BUILD_NUMBER}"
+                            }
+                        ]
+                    }"""
+                )
+            }
+        }
     }
 }
