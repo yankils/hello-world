@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('checkout scm') {
             steps {
-                git branch: 'master' credentialsId:'' url: 'https://github.com/jay19888/hello-world-1.git'
+                git branch: 'master', credentialsId:'', url: 'https://github.com/jay19888/hello-world-1.git'
             }
         }
     }
