@@ -25,8 +25,8 @@ pipeline {
         }
         stage ('artifact the builds'){
             steps{
-                rtupload (
-                    serverId: 'artifact'
+                rtUpload (
+                    serverId: 'artifact',
                     spec: """{
                         "files": [
                             {
