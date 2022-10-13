@@ -10,5 +10,13 @@ pipeline {
                 git branch: 'master', credentialsId:'', url: 'https://github.com/jay19888/hello-world-1.git'
             }
         }
+        stage ('code analysis'){
+            steps {
+                withsonarQubeEnv('sonarqube'){
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=devops_project"
+                }
+
+            }
+        }
     }
 }
