@@ -13,6 +13,7 @@ pipeline {
         stage ('code analysis'){
             steps {
                 withSonarQubeEnv('sonarqube'){
+                    def mvn = tool 'Default Maven';
                     sh "mvn clean verify sonar:sonar -Dsonar.projectKey=devops_project"
                 }
 
