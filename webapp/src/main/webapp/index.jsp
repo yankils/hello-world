@@ -31,7 +31,8 @@
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 
-   <h1> Thankyou, Happy Learning </h1>
+   <h1> Thankyou, Happy Learning. Anji the superstar with a great big God this has got to work Anji you know your stuff ya. yet another commit</h1>
 
+   <h1> This is just incredible. I am glad</h1>
   
 </form>
