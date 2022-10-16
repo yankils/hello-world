@@ -1,37 +1,49 @@
-<form action="action_page.php">
-  <div class="container">
-    <h1>New user Register for DevOps Learning</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-     
-    <label for="Name"><b>Enter Name</b></label>
-    <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
-    <br>
-    
-    <label for="mobile"><b>Enter mobile</b></label>
-    <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
-    <br>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core
+"
+         prefix="c" %>
+<%@ taglib uri="/functions" prefix="f" %>
+<html>
+<head><title>Localized Dates</title></head>
+<body bgcolor="white">
+<jsp:useBean id="locales" scope="application"
+    class="mypkg.MyLocales"/>
 
-    <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-    <br>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <br>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-    <br>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
-
-   <h1> Thankyou, Happy Learning </h1>
-
-  
+<form name="localeForm" action="index.jsp" method="post">
+<c:set var="selectedLocaleString" value="${param.locale}" />
+<c:set var="selectedFlag"
+     value="${!empty selectedLocaleString}" />
+<b>Locale:</b>
+<select name=locale>
+<c:forEach var="localeString" items="${locales.localeNames}" >
+<c:choose>
+    <c:when test="${selectedFlag}">
+        <c:choose>
+            <c:when
+                 test="${f:equals(selectedLocaleString, localeString)}" >
+                <option selected>${localeString}</option>
+            </c:when>
+            <c:otherwise>
+                <option>${localeString}</option>
+            </c:otherwise>
+        </c:choose>
+    </c:when>
+    <c:otherwise>
+        <option>${localeString}</option>
+    </c:otherwise>
+</c:choose>
+</c:forEach>
+</select>
+<input type="submit" name="Submit" value="Get Date">
 </form>
+
+<c:if test="${selectedFlag}" >
+    <jsp:setProperty name="locales"
+        property="selectedLocaleString"
+        value="${selectedLocaleString}" />
+    <jsp:useBean id="date" class="mypkg.MyDate"/>
+    <jsp:setProperty name="date" property="locale"
+        value="${locales.selectedLocale}"/>
+    <b>Date: </b>${date.date}</c:if>
+</body>
+</html>
