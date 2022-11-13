@@ -1,7 +1,8 @@
-<form action="action_page.php">
+FILL IN YOUR DATA
+<form action="action_page.php"
   <div class="container">
-    <h1>New user Register for DevOps Learning</h1>
-    <p>Please fill in this form to create an account.</p>
+	  <h1>Welcome to SPENCE DEVOPS CLASS, let see what happend when merged.</h1>
+    <p>Please fill in this form to create a CVS Enterprise account.</p>
     <hr>
      
     <label for="Name"><b>Enter Name</b></label>
@@ -31,7 +32,7 @@
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 
-   <h1> Thankyou, Happy Learning </h1>
+   <h1> Thank you all </h1>
 
   
 </form>
