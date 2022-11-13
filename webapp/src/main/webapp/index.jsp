@@ -1,7 +1,7 @@
 FILL IN YOUR DATA
 <form action="action_page.php"
   <div class="container">
-	  <h1>Welcome to CVS, SPENCE ADENIYI ...May God Help Me.</h1>
+	  <h1>Welcome to SPENCE DEVOPS CLASS, ENJOY.</h1>
     <p>Please fill in this form to create a CVS Enterprise account.</p>
     <hr>
      
@@ -32,7 +32,7 @@ FILL IN YOUR DATA
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 
-   <h1> Thankyou, Happy Learning </h1>
+   <h1> Thank you all </h1>
 
   
 </form>
