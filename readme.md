@@ -1,4 +1,0 @@
-
-firstline
-secondline
-fd
