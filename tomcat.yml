@@ -1,5 +1,5 @@
 ---
-- hosts: webserver
+- hosts: all
   become: true
   tasks:
 #     - name: update the repo
