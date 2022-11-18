@@ -19,7 +19,7 @@ spec:
         tier: frontend
     spec:
       containers:
-        - image: jayn21/demo:test-7
+        - image: $KUBERNETES_SECRET_NAME
           name: tomcat
           ports:
             - containerPort: 8080
