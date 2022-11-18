@@ -25,6 +25,11 @@
     - name: Install Docker Module for Python
       pip:
         name: docker
+    - name: delete docker image and docker container
+      shell: |
+        - docker stop $(docker ps -aq)
+        - docker rm $(docker ps -aq)
+        - 
     - name: pull a docker image
       docker_image:
         name: "{{ image }}"
@@ -38,5 +43,3 @@
           - "8080"
         ports:
           - "8085:8080"
-    - name: copy war file to above tomcat container
-      command: 'docker cp webapp.war demo:/usr/local/tomcat/webapps/'
