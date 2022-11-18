@@ -1,22 +1,35 @@
 ---
-- hosts: all
+- hosts: deploy
   become: true
   tasks:
-#     - name: update the repo
-#       apt:
-#         name: *
-#         state: latest
-#     - name: install docker
-#       apt:
-#         name: docker.io
-#         state: present
-#     - name: start docker
-#       systemd:
-#         name: docker
-#         state: started
-    - name: removing previous container
-      shell: 'docker rm demo -f'
-    - name: creating a container
+    - name: Install aptitude using apt
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install required system packages
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+    - name: pull a docker image
+      docker_image:
+        name: "{{ image }}"
+        source: pull
+    - name: lauching a tomcat
       docker_container:
         name: demo
         image: "{{ image }}"
@@ -25,3 +38,5 @@
           - "8080"
         ports:
           - "8085:8080"
+    - name: copy war file to above tomcat container
+      command: 'docker cp webapp.war demo:/usr/local/tomcat/webapps/'
