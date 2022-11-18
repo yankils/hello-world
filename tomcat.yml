@@ -2,18 +2,18 @@
 - hosts: webserver
   become: true
   tasks:
-    - name: update the repo
-      apt:
-        name: *
-        state: latest
-    - name: install docker
-      apt:
-        name: docker.io
-        state: present
-    - name: start docker
-      systemd:
-        name: docker
-        state: started
+#     - name: update the repo
+#       apt:
+#         name: *
+#         state: latest
+#     - name: install docker
+#       apt:
+#         name: docker.io
+#         state: present
+#     - name: start docker
+#       systemd:
+#         name: docker
+#         state: started
     - name: removing previous container
       shell: 'docker rm demo -f'
     - name: creating a container
