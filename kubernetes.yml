@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: "25%"
+      maxSurge: "125%"
+  template:
+    metadata:
+      name: mypod
+      labels:
+        tier: frontend
+    spec:
+      containers:
+        - image: jayn21/demo:test-7
+          name: tomcat
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myservice
+spec:
+  type: NodePort
+  selector:
+    tier: frontend
+  ports:
+    - port: 8080
+      nodePort: 30100
