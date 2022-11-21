@@ -1,35 +1,70 @@
+
 pipeline{
     agent any
+    triggers {
+        pollSCM '* * * * *'
+    }
+
     environment {
-        http_proxy = "http://qcwebproxylb.juniper.net:3128"
-        https_proxy = "http://qcwebproxylb.juniper.net:3128"
+        endUrl = "https://index.docker.io/v1/"
+        repository="anujgupta1"
+        imageName ="tomcat"
+        tag = "v3"
+        PATH = "/opt/apache-maven-3.8.6/bin:$PATH"
     }
     stages{
-        stage("Test"){
+        stage("GIt Checkout"){
             steps{
-                echo "Test Stage"
+                git branch: 'master', credentialsId: 'git', url: 'https://github.com/anujguptatecnotree/hello-world.git'
             }
         }
-        stage("Stage"){
+        stage("Build clean and compile Project"){
             steps{
-                echo "Stage Deployment $http_proxy"
+                sh 'mvn clean compile'
+            }
+
+        }
+        stage("Test Maven Project"){
+            steps{
+                sh 'mvn test'
+            }
+            post{
+                always{
+                    echo "========Running Junit========"
+                    //sh 'make check || true'
+                    //junit '**/target/*.xml'
+                }
+            } 
+
+        }
+        stage("mvn Build"){
+            steps{
+                sh 'mvn install'
+                sh 'pwd'
             }
         }
-        stage("prod"){
+        
+        stage("Build Docker Image"){
             steps{
-                echo "Prod Deployment ${env.BUILD_ID}"
+                sh 'docker stop tomcat-server && docker rm tomcat-server' 
+                sh 'docker rmi ${repository}/${imageName}:${tag}'
+                sh 'docker build -t ${repository}/${imageName}:${tag} . -f Dockerfile'
+               
             }
         }
-    }
-    post{
-        always{
-            echo "========always========"
+        stage("Upload the image to Hub"){
+            steps{
+                withDockerRegistry(credentialsId: 'dockerhub', url: "${endUrl}") {
+                sh 'docker push ${repository}/${imageName}:${tag}'
+                }
+               
+            }
         }
-        success{
-            echo "========pipeline executed successfully ========"
+        stage("Deployment tomcat server"){
+            steps{
+                sh 'docker run -it -d -p 8083:8080 --name "tomcat-server" ${repository}/${imageName}:${tag}'
+            }
         }
-        failure{
-            echo "========pipeline execution failed========"
-        }
+        
     }
 }
