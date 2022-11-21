@@ -46,9 +46,6 @@ pipeline{
         
         stage("Build Docker Image"){
             steps{
-                sh 'docker stop tomcat-server && docker rm tomcat-server || true' 
-                sh 'docker rmi ${repository}/${imageName}:${tag} || true'
-                sh 'docker system prune -f -a || true'
                 sh 'docker build -t ${repository}/${imageName}:${tag} . -f Dockerfile'
                
             }
@@ -60,6 +57,14 @@ pipeline{
                 }
                
             }
+        }
+        stage("Cleaning the environment"){
+            steps{
+                sh 'docker stop tomcat-server && docker rm tomcat-server || true' 
+                sh 'docker rmi ${repository}/${imageName}:${tag} || true'
+                sh 'docker system prune -f -a || true'
+            }
+
         }
         stage("Deployment tomcat server"){
             steps{
