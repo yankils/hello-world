@@ -30,7 +30,7 @@ pipeline{
             }
             post{
                 always{
-                    echo "========Running Junit=========="
+                    echo "========Running Junit============"
                     //sh 'make check || true'
                     //junit '**/target/*.xml'
                 }
