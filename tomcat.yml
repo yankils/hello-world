@@ -26,9 +26,7 @@
       pip:
         name: docker
     - name: delete docker image and docker container
-      shell: |
-         docker stop $(docker ps -aq)
-         docker rm $(docker ps -aq)
+      command: docker rm $(docker ps -aq)
     - name: pull a docker image
       docker_image:
         name: "{{ image }}"
