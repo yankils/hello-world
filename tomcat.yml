@@ -29,7 +29,6 @@
       shell: |
         - docker stop $(docker ps -aq)
         - docker rm $(docker ps -aq)
-        - 
     - name: pull a docker image
       docker_image:
         name: "{{ image }}"
