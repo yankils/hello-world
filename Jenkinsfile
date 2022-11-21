@@ -9,7 +9,7 @@ pipeline{
         endUrl = "https://index.docker.io/v1/"
         repository="anujgupta1"
         imageName ="tomcat"
-        tag = "v4"
+        tag = "v5"
         PATH = "/opt/apache-maven-3.8.6/bin:$PATH"
     }
     stages{
