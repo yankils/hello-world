@@ -17,6 +17,10 @@
     <br>
     <hr>
 
+    <label for="ph"><b>Phone Number</b></label>
+    <input type="Phone Number" placeholder="Enter Phone Number" name="ph" id="ph" required>
+    <br>
+
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
     <button type="submit" class="registerbtn">Register</button>
   </div>
