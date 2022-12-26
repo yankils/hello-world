@@ -33,6 +33,6 @@
 
    <h1> Thankyou, Happy Learning </h1>
 
-	<h1> I have modified and trying to testing the changes</h1>
+	<h1> I have modified and trying to test the changes</h1>
   
 </form>
