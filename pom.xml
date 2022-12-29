@@ -217,11 +217,6 @@
     <maven>3.0.3</maven>
   </prerequisites>
          
-   <properties> 
-   <maven.compiler.source>1.8</maven.compiler.source>
-   <maven.compiler.target>1.8</maven.compiler.target>
-   </properties>
-         
    <build>
    <plugins>
    <plugin>
