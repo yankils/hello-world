@@ -1,0 +1,44 @@
+pipeline{
+  agent any
+  environment {
+        PATH = "$PATH:/usr/share/apache-maven/bin"
+            }
+    stages {
+        stage('Git Checkout'){
+            steps{
+                git 'https://github.com/Gayathri-praveen/hello-world.git'
+            }
+        }
+
+        stage('Build code'){
+            steps
+               {
+                   sh "mvn clean package"
+                }
+        }
+
+        stage('Dependency Check'){
+             steps{
+                 dependencyCheck additionalArguments: '', odcInstallation: 'OWASP-Dependency-Check'
+                 dependencyCheckPublisher pattern: ''
+                  }
+        }
+
+        stage('sonar analysis'){
+            steps
+               {
+                   withEnv(['SONAR_TOKEN=a68219fb650a4260ac04a1b43b6e78db91ab9ae3']){
+                   sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=helloworldproject1'
+                }
+            }
+        }
+
+        stage('Deploy war'){
+            steps {
+               sshagent(['deploy-user']) {
+                sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war ubuntu@15.206.90.194:/opt/tomcat/webapps"
+                }
+            }
+        }
+    }
+}
