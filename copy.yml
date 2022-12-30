@@ -1,0 +1,83 @@
+---
+- name: Install and configure tomcat server
+  hosts: webserver
+  remote_user: ansi1
+  vars:
+      packages: openjdk-11-jre-headless
+      tomcat_version: 9.0.70
+      tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_version.split('.')[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
+      Nexus_url: http://3.110.30.56:8081/repository/demo-release/com/example/maven-project/maven-project/1.2-SNAPSHOT/maven-project-1.2-20221212.092756-2.war
+      tomcat_port: 8090
+  become: yes
+
+  tasks:
+  - name: Update Repo Cache
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+      force_apt_get: true
+
+  - name: Insall openjdk
+    apt:
+      name: "{{packages}}"
+      state: present
+
+  - name: Creates directory
+    file:
+       path: /opt/tomcat1/
+       state: directory
+
+
+  - name: Download tomcat
+    get_url:
+          url: "{{tomcat_url}}"
+          dest: /opt/tomcat1
+
+  - name: Extracting tomcat
+    unarchive:
+          src: /opt/tomcat1/apache-tomcat-{{tomcat_version}}.tar.gz
+          dest: /opt/tomcat1
+          remote_src: yes
+
+  - name: Changing default port
+    template:
+          src: server.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/conf/server.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+ - name: Changing tomcat_users
+    template:
+          src: tomcat-users.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/conf/tomcat-users.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+
+  - name: Changing manager_users
+    template:
+          src: context.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/manager/META-INF/context.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+
+  - name: Changing Hostmanager_users
+    template:
+          src: context-hostmanager.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/host-manager/META-INF/context.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+
+  - name: Stop tomcat services
+    shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/shutdown.sh
+
+
+  - name: Start Tomcat on sever
+    shell: nohup /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/startup.sh
+
