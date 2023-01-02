@@ -1,0 +1,52 @@
+---
+- name: Creates directory
+    file:
+       path: /opt/tomcat1/
+       state: directory
+
+
+  - name: Download tomcat
+    get_url:
+          url: "{{tomcat_url}}"
+          dest: /opt/tomcat1
+
+  - name: Extracting tomcat
+    unarchive:
+          src: /opt/tomcat1/apache-tomcat-{{tomcat_version}}.tar.gz
+          dest: /opt/tomcat1
+          remote_src: yes
+
+  - name: Changing default port
+    template:
+          src: server.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/conf/server.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+ - name: Changing tomcat_users
+    template:
+          src: tomcat-users.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/conf/tomcat-users.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+
+  - name: Changing manager_users
+    template:
+          src: context.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/manager/META-INF/context.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
+
+  - name: Changing Hostmanager_users
+    template:
+          src: context-hostmanager.xml.j2
+          dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/host-manager/META-INF/context.xml
+          owner: root
+          group: root
+          mode: 777
+          backup: yes
