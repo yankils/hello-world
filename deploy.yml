@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapp
+  labels:
+    app: javaapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javaapp
+  template:
+    metadata:
+      labels:
+        app: javaapp
+    spec:
+      containers:
+      - name: docker-container
+        image: 929896200375.dkr.ecr.ap-south-1.amazonaws.com/mydocker:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
