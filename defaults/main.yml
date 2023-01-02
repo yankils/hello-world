@@ -1,2 +1,6 @@
 ---
 # defaults file for tomcat
+      packages: openjdk-11-jre-headless
+      tomcat_version: 9.0.70
+      tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_version.split('.')[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
+      tomcat_port: 8090
