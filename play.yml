@@ -1,0 +1,7 @@
+---
+- name: Install tomcat and deploy application
+  hosts: webserver
+  roles: 
+      -role: roles/tomcat
+       become: yes
+  
