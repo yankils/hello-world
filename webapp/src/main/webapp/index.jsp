@@ -1,7 +1,8 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>New user Register for DevOps Learning</h1>
+    <h1>New user Registetion - Docker setup using the jenkins-ansible build tool as CI-CD model </h1>
     <p>Please fill in this form to create an account.</p>
+    <p>Testing commit changes release branch</p>
     <hr>
      
     <label for="Name"><b>Enter Name</b></label>
@@ -33,5 +34,6 @@
 
    <h1> Thankyou, Happy Learning </h1>
 
+	<h1> I have modified and trying to test the changes</h1>
   
 </form>
