@@ -1,7 +1,7 @@
 ---
 # handlers file for tomcat
--- name: Stop tomcat services
-  shell: /usr/local/apache-tomcat-10.0.27/bin/shutdown.sh
+  - name: Stop tomcat services
+    shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/shutdown.sh
 
-- name: Start Tomcat
-  shell: nohup /usr/local/apache-tomcat-10.0.27/bin/startup.sh
+  - name: Start Tomcat on sever
+    shell: nohup /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/startup.sh
