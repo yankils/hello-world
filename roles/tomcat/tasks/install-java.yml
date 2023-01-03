@@ -1,11 +1,8 @@
 ---
-- name: Update Repo Cache
-    apt:
-      update_cache: true
-      cache_valid_time: 3600
-      force_apt_get: true
-
-  - name: Insall openjdk
-    apt:
-      name: "{{packages}}"
-      state: present
+- name: update apt repo and cache
+  apt:
+    update_cache: yes
+- name: install openjdk 11
+  package:
+    name: "{{ java_package }}"
+    state: present
