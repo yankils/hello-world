@@ -2,7 +2,6 @@
 - name: Install and configure tomcat server
   hosts: webserver
   remote_user: ansi1
-  roles: 
-    tomcat3
+  roles: tomcat3
        
   
