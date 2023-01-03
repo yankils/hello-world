@@ -2,5 +2,6 @@
 - hosts: localhost
   remote_user: root
   gather_facts: no  
+  become: yes
   roles:
     - tomcat
