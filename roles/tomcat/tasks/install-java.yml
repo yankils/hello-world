@@ -1,0 +1,11 @@
+---
+- name: Update Repo Cache
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+      force_apt_get: true
+
+  - name: Insall openjdk
+    apt:
+      name: "{{packages}}"
+      state: present

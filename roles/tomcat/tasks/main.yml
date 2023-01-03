@@ -1,0 +1,5 @@
+---
+# tasks file for tomcat
+- include_tasks: install-java.yml
+- include_tasks: install-tomcat.yml
+- include_tasks: deploy-app.yml
