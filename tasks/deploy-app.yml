@@ -1,5 +1,0 @@
----
-- name: Deploy war file to tomcat server
-        copy:
-         src: /var/lib/jenkins/workspace/lastjob/webapp/target/webapp.war
-         dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps
