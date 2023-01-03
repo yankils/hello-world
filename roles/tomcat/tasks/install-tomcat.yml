@@ -39,9 +39,14 @@
     backup: yes
 - name: Changing Hostmanager_users
   template:
-    src: context-hostmanager.xml.j2
+    src: context.xml.j2
     dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/host-manager/META-INF/context.xml
     owner: root
     group: root
     mode: 777
     backup: yes
+    notify:
+     - Start Tomcat
+    
+ 
+    
