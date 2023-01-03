@@ -3,6 +3,7 @@
   hosts: webserver
   remote_user: ansi1
   gather_facts: no
+  become: yes
   roles:
     - role: tomcat
        
