@@ -1,8 +1,0 @@
----
-# handlers file for tomcat
-- name: restart tomcat
-  ansible.builtin.systemd:
-    name: 'tomcat.service'
-    daemon_reload: yes
-    enabled: yes
-    state: restarted
