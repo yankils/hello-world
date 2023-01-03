@@ -51,5 +51,10 @@
    src: /var/lib/jenkins/workspace/lastjob/webapp/target/webapp.war
    dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/
    remote_src: true
+   
+- name: Stop tomcat services
+  shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/shutdown.sh
 
+- name: Start Tomcat on sever
+  shell: nohup /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/startup.sh
                                                    
