@@ -1,5 +1,55 @@
 ---
 # tasks file for tomcat
-- include_tasks: install-java.yml
-- include_tasks: install-tomcat.yml
-- include_tasks: deploy-app.yml
+
+- name: update apt repo and cache
+  apt:
+    update_cache: yes
+- name: install openjdk
+  package:
+    name: "{{ java_package }}"
+    state: present
+- name: Creates directory
+  file:
+    path: /opt/tomcat1/
+    state: directory
+- name: Download tomcat
+  get_url:
+    url: "{{ tomcat_url }}"
+    dest: /opt/tomcat1
+- nae: Extracting tomcat
+  unarchive:
+    src: /opt/tomcat1/apache-tomcat-{{tomcat_version}}.tar.gz
+    dest: /opt/tomcat1
+    remote_src: yes
+- name: Changing default port
+  template:
+    src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/server.xml.j2
+    dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/conf/server.xml
+    owner: root
+    group: root
+    mode: 777
+    backup: yes
+- name: Changing tomcat_users
+  template:
+    src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/tomcat-users.xml.j2
+    dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/conf/tomcat-users.xml
+    owner: root
+    group: root
+    mode: 777
+    backup: yes
+- name: Changing manager_users
+  template:
+    src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/manager-context.xml.j2
+    dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/host-manager/META-INF/context.xml
+    owner: root
+    group: root
+    mode: 777
+    backup: yes
+
+- name: Deploy war file to tomcat server
+  copy:
+   src: /var/lib/jenkins/workspace/lastjob/webapp/target/webapp.war
+   dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/
+   remote_src: true
+
+                                                   
