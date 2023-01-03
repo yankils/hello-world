@@ -1,2 +1,2 @@
 [webserver]
-172.31.15.106 ansible_ssh_user=ansi1  
+172.31.15.106 ansible_ssh_user=ansi1  ansible_ssh_pass=ansi1
