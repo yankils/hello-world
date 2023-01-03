@@ -3,6 +3,6 @@
   hosts: webserver
   remote_user: ansi1
   roles:
-    - role: tomcat3
+    - role: tomcat
        
   
