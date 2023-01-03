@@ -2,6 +2,7 @@
   <div class="container">
     <h1>New user Registetion - Docker setup using the jenkins-ansible build tool as CI-CD model </h1>
     <p>Please fill in this form to create an account.</p>
+    <p>Testing commit changes</p>
     <hr>
      
     <label for="Name"><b>Enter Name</b></label>
