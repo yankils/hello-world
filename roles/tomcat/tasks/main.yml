@@ -54,7 +54,7 @@
     group: root
     mode: 777
     backup: yes
-  notify:
+    notify:
     - reload the daemon, enable and start the tomcat service
     
 - name: Changing manager_users
@@ -65,7 +65,7 @@
      group: root
      mode: 777
      backup: yes
-   notify:
+     notify:
     - reload the daemon, enable and start the tomcat service  
     
 - name: Changing host_manager_users
@@ -76,7 +76,7 @@
     group: root
     mode: 777
     backup: yes
-   notify:
+    notify:
     - reload the daemon, enable and start the tomcat service 
 
 - name: Deploy war file to tomcat server
