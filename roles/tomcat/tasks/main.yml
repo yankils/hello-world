@@ -60,8 +60,7 @@
   copy:
    src: /var/lib/jenkins/workspace/lastjob/webapp/target/webapp.war
    dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/
-   mode: preserve
-   remote_src: yes
+   
    
 - name: Stop tomcat services
   shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/shutdown.sh
