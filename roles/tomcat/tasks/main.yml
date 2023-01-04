@@ -21,6 +21,22 @@
     src: /opt/tomcat1/apache-tomcat-{{tomcat_version}}.tar.gz
     dest: /opt/tomcat1
     remote_src: yes
+    
+- name: copy the tomcat service file
+  template:
+    src: 'tomcat.service.j2'
+    dest: /etc/systemd/system/tomcat.service
+    owner: root
+    group: root
+  notify:
+    - reload the daemon, enable and start the tomcat service 
+- name: Force all notified handlers to run at this point, not waiting for normal sync points
+  meta: flush_handlers
+- name: ensure tomcat service is running
+  systemd:
+    name: 'tomcat.service'
+    state: 'started'
+  
 - name: Changing default port
   template:
     src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/server.xml.j2
@@ -29,6 +45,7 @@
     group: root
     mode: 777
     backup: yes
+    
 - name: Changing tomcat_users
   template:
     src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/tomcat-users.xml.j2
@@ -37,7 +54,9 @@
     group: root
     mode: 777
     backup: yes
- 
+  notify:
+    - reload the daemon, enable and start the tomcat service
+    
 - name: Changing manager_users
   template:
      src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/manager-context.xml.j2
@@ -46,6 +65,8 @@
      group: root
      mode: 777
      backup: yes
+   notify:
+    - reload the daemon, enable and start the tomcat service  
     
 - name: Changing host_manager_users
   template:
@@ -55,6 +76,8 @@
     group: root
     mode: 777
     backup: yes
+   notify:
+    - reload the daemon, enable and start the tomcat service 
 
 - name: Deploy war file to tomcat server
   copy:
@@ -62,9 +85,5 @@
    dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/
    
    
-- name: Stop tomcat services
-  shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/shutdown.sh
 
-- name: Start Tomcat on sever
-  shell: nohup /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/startup.sh
                                                    
