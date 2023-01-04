@@ -38,8 +38,8 @@
     mode: 777
     backup: yes
  
- - name: Changing manager_users
-   template:
+- name: Changing manager_users
+  template:
      src: /var/lib/jenkins/workspace/lastjob/roles/tomcat/templates/manager-context.xml.j2
      dest: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/webapps/manager/META-INF/context.xml
      owner: root
