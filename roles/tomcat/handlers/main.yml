@@ -1,7 +1,8 @@
 ---
 # handlers file for tomcat
-  - name: Stop tomcat services
-    shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/shutdown.sh
-
-  - name: Start Tomcat on sever
-    shell: nohup /opt/tomcat1/apache-tomcat-{{tomcat_version}}/bin/startup.sh
+- name: reload the daemon, enable and start the tomcat service
+  ansible.builtin.systemd:
+    name: 'tomcat.service'
+    daemon_reload: yes
+    enabled: yes
+    state: restarted
