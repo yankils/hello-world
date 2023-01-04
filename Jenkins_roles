@@ -1,0 +1,51 @@
+pipeline{
+  agent any
+  environment {
+        PATH = "$PATH:/usr/share/apache-maven/bin"
+            }
+    stages {        
+        stage('Git Checkout'){
+            steps{
+                git 'https://github.com/Gayushri/hello-world.git'
+            }
+        }
+        
+        stage('Build code'){
+            steps
+               {
+                   sh "mvn clean package"
+                }
+        }
+        
+        stage('Dependency Check'){
+             steps{
+                 dependencyCheck additionalArguments: '', odcInstallation: 'OWASP-Dependency-Check'
+                 dependencyCheckPublisher pattern: ''
+                  }
+        }
+        
+        stage('Sonar Analysis'){
+             steps{
+                 withSonarQubeEnv('sonarqube-9.8') {
+                 sh 'mvn package sonar:sonar'
+                }
+                  }
+        }
+        
+        stage("Quality Gate") {
+             steps {
+                timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+            }
+            }
+        }
+        
+        
+        stage("Deploy") {
+             steps {
+        ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'deploy.inv', playbook: 'play.yml'
+            }
+        }
+        
+    }
+}
