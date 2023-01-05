@@ -12,11 +12,6 @@
   file:
     path: /opt/tomcat1/
     state: directory
-- name: Download tomcat
-  get_url:
-    url: "{{ tomcat_url }}"
-    dest: /opt/tomcat1
-
 
 - name: check if tomcat is installed
   shell: ps - ef | grep tomcat
@@ -29,6 +24,12 @@
     msg: tomcat is installed
   when: tomcat_installed.rc == 0
   
+- name: Download tomcat
+  get_url:
+    url: "{{ tomcat_url }}"
+    dest: /opt/tomcat1
+  when: tomcat_installed.rc == 0
+    
 
   
 - name: Extracting tomcat
