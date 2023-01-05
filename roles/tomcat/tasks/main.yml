@@ -17,7 +17,7 @@
     url: "{{ tomcat_url }}"
     dest: /opt/tomcat1
 
-- name: Check if the tomcat exists.
+- name: Check if the tomcat exists
   shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}
   ignore_errors: true
   register: tomcat_exists
@@ -28,6 +28,8 @@
   shell: chdir=/opt/tomcat1/wget
     https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_version.split('.')[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
   when: tomcat_exists.rc != 0
+  owner: root
+  group: root
   
 - name: Extracting tomcat
   unarchive:
