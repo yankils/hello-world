@@ -18,7 +18,7 @@
     dest: /opt/tomcat1
 
 - name: Check if the tomcat exists.
-  command: /opt/tomcat1/apache-tomcat-{{tomcat_version}}
+  shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}
   ignore_errors: true
   register: tomcat_exists
 - name: Download tomcat
