@@ -26,8 +26,8 @@
   changed_when: false
 - name: print
   debug:
-    msg: httpd is installed
-  when: httpd_installed.rc == 0
+    msg: tomcat is installed
+  when: tomcat_installed.rc == 0
   
 
   
