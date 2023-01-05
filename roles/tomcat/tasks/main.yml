@@ -18,23 +18,18 @@
     dest: /opt/tomcat1
 
 
-- name: Check for tomcat existing version
-  shell:
-    cmd: /opt/tomcat1/apache-tomcat-{{ tomcat_version}}
-    warn: false
-  register: result
+- name: check if tomcat is installed
+  shell: ps - ef | grep tomcat
+  register: tomcat_installed
+  ignore_errors: true
+  check_mode: false
   changed_when: false
-  failed_when: false
-- name: Show result
+- name: print
   debug:
-    msg: "{{ result.stderr }}"
+    msg: httpd is installed
+  when: httpd_installed.rc == 0
   
-- name: Download tomcat
-  shell: chdir=/opt/tomcat1/wget
-    https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_version.split('.')[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
-  when: tomcat_exists.rc != 0
-  owner: root
-  group: root
+
   
 - name: Extracting tomcat
   unarchive:
