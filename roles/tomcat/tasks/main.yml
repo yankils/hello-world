@@ -30,7 +30,7 @@
     state: directory
 
 - name: check if tomcat is installed
-  shell: ps - ef | grep tomcat
+  shell: ps -ef | grep tomcat
   register: tomcat_installed
   check_mode: false
   changed_when: false
