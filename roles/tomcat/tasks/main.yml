@@ -8,13 +8,15 @@
   async: 1000
   poll: 0
   register: package_update
-
+  debug:
+      var=ansible_date_time.time
     
 - name: install openjdk
   package:
     name: "{{ java_package }}"
     state: present
-    
+    debug:
+      var=ansible_date_time.time
  
 - name: Checking the Job Status
   async_status:
