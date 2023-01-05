@@ -21,6 +21,9 @@
   shell: /opt/tomcat1/apache-tomcat-{{tomcat_version}}
   ignore_errors: true
   register: tomcat_exists
+  owner: root
+  group: root
+  
 - name: Download tomcat
   shell: chdir=/opt/tomcat1/wget
     https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_version.split('.')[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
