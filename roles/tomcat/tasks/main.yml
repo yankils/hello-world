@@ -16,7 +16,6 @@
 - name: check if tomcat is installed
   shell: ps - ef | grep tomcat
   register: tomcat_installed
-  ignore_errors: true
   check_mode: false
   changed_when: false
 - name: print
