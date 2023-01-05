@@ -4,10 +4,24 @@
 - name: update apt repo and cache
   apt:
     update_cache: yes
+    
 - name: install openjdk
   package:
     name: "{{ java_package }}"
     state: present
+    async: 180
+    poll: 0
+    register: installed-java
+ 
+- name: Checking the Job Status
+  async_status:
+    jid: "{{ installed-java.ansible_job_id }}"
+    register: jobs_result
+    until: jobs_result.finished
+    delay: 5
+    retries: 10
+      
+  
 - name: Creates directory
   file:
     path: /opt/tomcat1/
