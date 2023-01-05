@@ -4,9 +4,10 @@
 - name: update apt repo and cache
   apt:
     update_cache: yes
-    async: 300
-    poll: 0
-    register: package_update
+    cache_valid_time: 3600    
+  async: 1000
+  poll: 0
+  register: package_update
 
     
 - name: install openjdk
