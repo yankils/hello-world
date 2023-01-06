@@ -2,5 +2,5 @@
 java_package: openjdk-11-jdk
 tomcat_version: 9.0.70
 tomcat_url: https://dlcdn.apache.org/tomcat/tomcat-{{tomcat_version.split('.')[0]}}/v{{tomcat_version}}/bin/apache-tomcat-{{tomcat_version}}.tar.gz
-tomcat_admin_user: tomcat
-tomcat_admin_password: tomcat
+tomcat_admin_user: vault.yml
+tomcat_admin_password: vault.yml
