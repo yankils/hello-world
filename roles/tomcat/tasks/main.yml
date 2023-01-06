@@ -7,8 +7,7 @@
     cache_valid_time: 3600    
   async: 1000
   poll: 0
-  register: result1
-  
+  register: result1  
     
 - name: install openjdk
   package:
@@ -16,8 +15,7 @@
     state: present
   async: 1000
   poll: 0
-  register: result2  
-    
+  register: result2     
  
 - name: Checking the Job Status
   async_status:
@@ -29,9 +27,7 @@
     loop_var: loop_item
   register: async_results
   until: async_results.finished
-  retries: 30
-
-      
+  retries: 30   
   
 - name: Creates directory
   file:
@@ -48,11 +44,11 @@
     msg: tomcat is installed
   when: tomcat_installed.rc == 0
   
-- name: Download tomcat
+- name: Download tomcat if not installed
   get_url:
     url: "{{ tomcat_url }}"
     dest: /opt/tomcat1
-  when: tomcat_installed.rc ! = 0
+  when: tomcat_installed.stdout.find('is not installed') != -1
     
   
 - name: Extracting tomcat
