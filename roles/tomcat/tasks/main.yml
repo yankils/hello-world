@@ -21,7 +21,8 @@
     jid: "{{ package_update.ansible_job_id }}"
   register: jobs_result
   until: jobs_result.finished
-  retries: 5
+  delay: 1
+  loop: "{{ jobs_result.results }}"
       
   
 - name: Creates directory
@@ -43,15 +44,15 @@
   get_url:
     url: "{{ tomcat_url }}"
     dest: /opt/tomcat1
-  when: tomcat_installed.rc == 0
+  when: tomcat_installed.rc ! = 0
     
-
   
 - name: Extracting tomcat
   unarchive:
     src: /opt/tomcat1/apache-tomcat-{{tomcat_version}}.tar.gz
     dest: /opt/tomcat1
     remote_src: yes
+  when: tomcat_installed.rc == 0 
     
 - name: copy the tomcat service file
   template:
