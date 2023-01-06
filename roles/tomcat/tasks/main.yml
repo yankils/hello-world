@@ -7,21 +7,30 @@
     cache_valid_time: 3600    
   async: 1000
   poll: 0
-  register: package_update
+  register: result1
   
     
 - name: install openjdk
   package:
     name: "{{ java_package }}"
     state: present
+  async: 1000
+  poll: 0
+  register: result2  
     
  
 - name: Checking the Job Status
   async_status:
-    jid: "{{ package_update.ansible_job_id }}"
-  register: jobs_result
-  until: jobs_result.finished
-  with_items: "{{ jobs_result.results }}"
+    jid: "{{ loop_item.ansible_job_id }}"
+  loop:
+    - "{{ result1 }}"
+    - "{{ result2 }}"
+  loop_control:
+    loop_var: loop_item
+  register: async_results
+  until: async_results.finished
+  retries: 30
+
       
   
 - name: Creates directory
