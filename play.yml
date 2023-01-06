@@ -4,9 +4,7 @@
   remote_user: ansi1
   gather_facts: no
   become: yes
-  vars_files:
-    - ../vault.yml
   roles:
-    - role: tomcat
+   - role: tomcat
        
   
