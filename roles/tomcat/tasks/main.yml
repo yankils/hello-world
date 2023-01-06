@@ -21,8 +21,7 @@
     jid: "{{ package_update.ansible_job_id }}"
   register: jobs_result
   until: jobs_result.finished
-  delay: 1
-  loop: "{{ jobs_result.results }}"
+  with_items: "{{ jobs_result.results }}"
       
   
 - name: Creates directory
