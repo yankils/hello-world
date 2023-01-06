@@ -31,7 +31,7 @@
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 
-   <h1> Thankyou, Happy Learning Build number 7 on docker by Balaji </h1>
+   <h1> Thankyou, Happy Learning Build number 7 on docker by RAMANAN  </h1>
 
   
 </form>
