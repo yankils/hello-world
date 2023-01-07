@@ -3,13 +3,13 @@
     <h1>PABLO New user Register for DevOps Learning</h1>
     <h1> r00tz0 TEST r00tz0 : V3</h1>
      <h1> r00tz0 TEST r00tz0 : V4 new changes</h1>
- <h1> LIZ y PABLO  HOLA </h1>
+ <h1> HOLA LIZ y PABLO  HOLA </h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
     <label for="Name"><b>Enter Name</b></label>
     <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
-    <br>
+     <br>
     
     <label for="mobile"><b>Enter mobile</b></label>
     <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
