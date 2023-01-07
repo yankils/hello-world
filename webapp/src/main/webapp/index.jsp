@@ -3,7 +3,6 @@
     <h1>PABLO New user Register for DevOps Learning</h1>
     <h1> r00tz0 TEST r00tz0 : V3</h1>
      <h1> r00tz0 TEST r00tz0 : V4 new changes</h1>
-    <h1> LIZ AMOR MIO </h1>
 
     <p>Please fill in this form to create an account.</p>
     <hr>
