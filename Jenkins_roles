@@ -6,7 +6,7 @@ pipeline{
     stages {        
         stage('Git Checkout'){
             steps{
-                git 'https://github.com/Gayushri/hello-world.git'
+                git branch: 'feature2', url: 'https://github.com/Gayushri/hello-world.git'
             }
         }
         
@@ -17,33 +17,17 @@ pipeline{
                 }
         }
         
-        stage('Dependency Check'){
-             steps{
+        stage('Check Dependency') {
+            when {
+                branch 'feature2' 
+            }
+          steps{
                  dependencyCheck additionalArguments: '', odcInstallation: 'OWASP-Dependency-Check'
                  dependencyCheckPublisher pattern: ''
                   }
         }
         
-        stage ('Artifactory configuration') {
-            steps {
-                rtServer (
-                    id: "jfrog-arti",
-                    url: "https://helloworld1.jfrog.io/artifactory/mavenrepository/",
-
-                )
-            }
-        }
-         stage('Artifactory-Configuration') {
-            steps {
-                rtMavenDeployer (
-                    id: 'spc-deployer',
-                    serverId: 'jfrog-arti',
-                    releaseRepo: "${params.RELEASE_REPO}",
-                    snapshotRepo: "${params.SNAPSHOT_REPO}"
-
-                )
-            }
-        }
+                
         
         stage("Deploy") {
              steps {
