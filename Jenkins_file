@@ -8,7 +8,7 @@ pipeline {
         BUILD_DESCRIPTION = "${env.BUILD_DESCRIPTION}"
     }
 options {
-  timestamps
+  timestamps()
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '2')
 }
     stages {
