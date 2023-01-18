@@ -1,17 +1,29 @@
-node {
-def mavenHome =  tool name: "maven3.8.7"  
-// checkout stage 
-stage('NAME hellow-world-code'){
-    git credentialsId: 'f77b1c92-3e52-47ef-9162-e762e93aa5de', url: 'https://github.com/maniroyal-github/hello-world.git'  (GITHUB--CODE)
-   }
-// build stage ----
-stage('NAME buils-satge'){
-sh "$mavenHome/bin/mvn clean package"
+pipeline {
+    agent any
+    tools {
+  maven 'maven3.8.7'
 }
-
-// quality stage ---- add user name password url in pom.xml
-stage('quality-satge'){
-sh "$mavenHome/bin/mvn sonar:sonar"
+ environment {
+        BUILD_NUMBER = "${env.BUILD_NUMBER}"
+        BUILD_DESCRIPTION = "${env.BUILD_DESCRIPTION}"
+    }
+options {
+  timestamps
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '2')
 }
-
-}//Node Closing
+    stages {
+         stage('code bring to maven') {
+            steps {
+            git credentialsId: 'f77b1c92-3e52-47ef-9162-e762e93aa5de', url: 'https://github.com/maniroyal-github/maven-web-application.git'
+            }
+        }
+        
+        
+      
+        stage('build maven') {
+            steps {
+            sh 'mvn clean package'
+            }
+        }
+    }
+}
