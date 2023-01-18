@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    tools {
+  maven 'maven3.8.7'
+}
+ environment {
+        BUILD_NUMBER = "DEV - ${env.BUILD_NUMBER}"
+        BUILD_DESCRIPTION = "HP-TEST ${env.BUILD_DESCRIPTION}"
+    }
+options {
+  timestamps()
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '2')
+}
+    stages {
+         stage('code bring to maven') {
+            steps {
+            git credentialsId: 'f77b1c92-3e52-47ef-9162-e762e93aa5de', url: 'https://github.com/maniroyal-github/maven-web-application.git'
+            }
+        }
+        
+        
+      
+        stage('build maven') {
+            steps {
+            sh 'mvn clean package'
+            }
+        }
+    }
+}
