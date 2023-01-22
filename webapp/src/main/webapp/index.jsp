@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>This is our TOMCAT Integration session 22 JAN 11:58 _ Poll SCM repeat_running application in tomcat container within Dokcer server </h1>
+    <h1>This is our TOMCAT Integration session 22 JAN 11:58 _ Poll SCM repeat_running application in tomcat container within Docker server </h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
