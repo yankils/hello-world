@@ -1,0 +1,90 @@
+.font-20 {
+  font-size: 20px;
+}
+
+.font-17 {
+  font-size: 17px;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
+.mb-6 {
+  margin-bottom: 6px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.pt-6 {
+  padding-top: 6px;
+}
+
+.pb-6 {
+  padding-bottom: 6px;
+}
+
+.button {
+  border: none;
+  border-radius: 6px;
+  line-height: 48px;
+  padding: 0 16px;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+}
+
+.bg-green {
+  background-color: #42b72a;
+}
+
+.bg-green:hover {
+  background-color: #36a420;
+}
+
+.bg-blue {
+  background-color: #1877f2;
+}
+
+.bg-blue:hover {
+  background-color: #146fe6;
+}
+
+.text-blue {
+  color: #1877f2;
+}
+
+.text-black {
+  color: #1c1e21;
+}
+
+.text-white {
+  color: white;
+}
