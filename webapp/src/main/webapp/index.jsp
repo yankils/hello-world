@@ -1,164 +1,431 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple registration form</title>
+    <title>Course Evaluation Survey</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <style>
       html, body {
-      display: flex;
-      justify-content: center;
-      height: 100%;
+      min-height: 100%;
       }
-      body, div, h1, form, input, p { 
+      body, input { 
       padding: 0;
       margin: 0;
       outline: none;
       font-family: Roboto, Arial, sans-serif;
-      font-size: 16px;
+      font-size: 14px;
       color: #666;
+      line-height: 22px;
       }
-      h1 {
-      padding: 10px 0;
-      font-size: 32px;
-      font-weight: 300;
-      text-align: center;
+      h1, h4 {
+      font-weight: 400;
       }
-      p {
-      font-size: 12px;
+      h4 {
+      margin: 22px 0 4px;
       }
-      hr {
-      color: #a9a9a9;
-      opacity: 0.3;
+      h5 {
+      text-transform: uppercase;
+      color: #095484;
       }
       .main-block {
-      max-width: 340px; 
-      min-height: 460px; 
-      padding: 10px 0;
-      margin: auto;
-      border-radius: 5px; 
-      border: solid 1px #ccc;
-      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-      background: #ebebeb; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px;
       }
       form {
-      margin: 0 30px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 2px 5px #ccc; 
+      background: #fff;
       }
-      .account-type, .gender {
-      margin: 15px 0;
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      vertical-align: middle;
       }
-      input[type=radio] {
-      display: none;
+      textarea {
+      width: calc(100% - 6px);
+      outline: none;
       }
-      label#icon {
-      margin: 0;
-      border-radius: 5px 0 0 5px;
+      input:hover, textarea:hover {
+      outline: none;
+      border: 1px solid #095484;
       }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      padding-top: 4px;
-      margin-right: 20px;
-      text-indent: 30px;
-      overflow: visible;
-      cursor: pointer;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      top: 2px;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #1c87c9;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      width: 9px;
-      height: 4px;
-      top: 8px;
-      left: 4px;
-      border: 3px solid #fff;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      input[type=text], input[type=password] {
-      width: calc(100% - 57px);
-      height: 36px;
-      margin: 13px 0 0 -5px;
-      padding-left: 10px; 
-      border-radius: 0 5px 5px 0;
-      border: solid 1px #cbc9c9; 
-      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-      background: #fff; 
-      }
-      input[type=password] {
-      margin-bottom: 15px;
-      }
-      #icon {
-      display: inline-block;
-      padding: 9.3px 15px;
-      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-      background: #1c87c9;
-      color: #fff;
+      th, td {
+      width: 15%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
       text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .additional-question th, .additional-question td {
+      width: 38%;
+      }
+      .course-rate th, .course-rate td {
+      width: 19%;
+      }
+      .first-col, .additional-question  .first-col, .course-rate .first-col {
+      width: 24%;
+      text-align: left;
+      }
+      .question, .comments {
+      margin: 15px 0 5px;
+      }
+      .question-answer label {
+      display: inline-block;
+      padding: 0 20px 15px 0;
+      }
+      .question-answer input {
+      width: auto;
+      }
+      .question-answer, table {
+      width: 100%;
       }
       .btn-block {
-      margin-top: 10px;
+      margin-top: 20px;
       text-align: center;
       }
       button {
-      width: 100%;
-      padding: 10px 0;
-      margin: 10px auto;
-      border-radius: 5px; 
+      width: 150px;
+      padding: 10px;
       border: none;
-      background: #1c87c9; 
-      font-size: 14px;
-      font-weight: 600;
+      border-radius: 5px; 
+      background: #095484;
+      font-size: 16px;
       color: #fff;
+      cursor: pointer;
       }
       button:hover {
-      background: #26a9e0;
+      background: #0666a3;
+      }
+      @media (min-width: 568px) {
+      th, td {
+      word-break: keep-all;
+      }
       }
     </style>
   </head>
   <body>
     <div class="main-block">
-      <h1>Registration</h1>
       <form action="/">
-        <hr>
-        <div class="account-type">
-          <input type="radio" value="none" id="radioOne" name="account" checked/>
-          <label for="radioOne" class="radio">Personal</label>
-          <input type="radio" value="none" id="radioTwo" name="account" />
-          <label for="radioTwo" class="radio">Company</label>
+        <h1>Course Evaluation Survey</h1>
+        <h4>COURSE</h4>
+        <input type="text"/>
+        <h4>INSTRUCTOR</h4>
+        <input type="text"/>
+        <h4>TERM AND YEAR</h4>
+        <input type="text"/>
+        <h5>Teaching approaches</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">1. The instructor stimulated my interest in the subject.</td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+              <td><input type="radio" value="none" name="interest" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">2. The instructor managed classroom time and pace well.</td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+              <td><input type="radio" value="none" name="managed" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">3. The instructor was organized and prepared for every class</td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+              <td><input type="radio" value="none" name="organized" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">4. The instructor encouraged discussions and responded to questions.</td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+              <td><input type="radio" value="none" name="encouraged" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">5. The instructor demonstrated in-depth knowledge of the subject.</td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+              <td><input type="radio" value="none" name="demonstrated" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">6. The instructor appeared enthusiastic and interested.</td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+              <td><input type="radio" value="none" name="appeared" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">7. The instructor used a variety of instructional methods to reach the course objectives (e.g. group discussions, student presentations, etc.)</td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+              <td><input type="radio" value="none" name="used" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">8. The instructor challenged students to do their best work.</td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+              <td><input type="radio" value="none" name="challenged" /></td>
+            </tr>
+          </table>
         </div>
-        <hr>
-        <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
-        <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Name" required/>
-        <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
-        <hr>
-        <div class="gender">
-          <input type="radio" value="none" id="male" name="gender" checked/>
-          <label for="male" class="radio">Male</label>
-          <input type="radio" value="none" id="female" name="gender" />
-          <label for="female" class="radio">Female</label>
+        <p class="question">9. The instructor was accessible outside of class.</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="accessible" /> yes</label>
+          <label><input type="radio" value="none" name="accessible" /> no</label>
         </div>
-        <hr>
+        <p class="question">10. Did the instructor actively attempt to prevent cheating in this course?</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="actively" /> yes</label>
+          <label><input type="radio" value="none" name="actively" /> no</label>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Feedback and assessment</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">11. Information about the assessment was communicated clearly</td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+              <td><input type="radio" value="none" name="clearly" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">12. Feedback was provided within the stated timeframe.</td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+              <td><input type="radio" value="none" name="provided" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">13. Feedback showed how to improve my work (e .g. corrections including comments).</td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+              <td><input type="radio" value="none" name="showed" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Resources and administration</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">14. The course was supported by adequate library resources.</td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+              <td><input type="radio" value="none" name="supported" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">15. Blackboard resources for the course were useful.</td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+              <td><input type="radio" value="none" name="resources" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">16. Instructor gave guidance on where to find resources.</td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+              <td><input type="radio" value="none" name="guidance" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Additional question</h5>
+        <div class="additional-question">
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Yes</th>
+              <th>No</th>
+            </tr>
+            <tr>
+              <td class="first-col">17. The syllabus was explained at the beginning of the course.</td>
+              <td><input type="radio" value="none" name="syllabus" /></td>
+              <td><input type="radio" value="none" name="syllabus" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">18. The course was delivered as outlined in the syllabus.</td>
+              <td><input type="radio" value="none" name="delivered" /></td>
+              <td><input type="radio" value="none" name="delivered" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">19. Instructor explained the grading criteria of the course.</td>
+              <td><input type="radio" value="none" name="criteria" /></td>
+              <td><input type="radio" value="none" name="criteria" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">20. Exams related to the course learning outcomes.</td>
+              <td><input type="radio" value="none" name="exams" /></td>
+              <td><input type="radio" value="none" name="exams" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">21. Projects/ assignments related to the course learning outcomes.</td>
+              <td><input type="radio" value="none" name="assignments" /></td>
+              <td><input type="radio" value="none" name="assignments" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Overall experience</h5>
+        <p class="question">22. This was a worthwhile class</p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="worthwhile" /> yes</label>
+          <label><input type="radio" value="none" name="worthwhile" /> no</label>
+        </div>
+        <p class="question">23. Would you recommend this course to a fellow
+          student?
+        </p>
+        <div class="question-answer">
+          <label><input type="radio" value="none" name="recommend" /> yes</label>
+          <label><input type="radio" value="none" name="recommend" /> no</label>
+        </div>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Poor</th>
+              <th>Fair</th>
+              <th>Good</th>
+              <th>Very good</th>
+              <th>Excellent</th>
+            </tr>
+            <tr>
+              <td class="first-col">24. Overall, how do you rate your experience in this course?</td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+              <td><input type="radio" value="none" name="rate" /></td>
+            </tr>
+          </table>
+        </div>
+        <div class="course-rate">
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>A:0 – 4h</th>
+              <th>B:5 – 8h</th>
+              <th>C:9 – 12h</th>
+              <th>C:9 – 12h</th>
+            </tr>
+            <tr>
+              <td class="first-col">25. Overall, how do you rate your experience in this course?</td>
+              <td><input type="radio" value="none" name="name" /></td>
+              <td><input type="radio" value="none" name="name" /></td>
+              <td><input type="radio" value="none" name="name" /></td>
+              <td><input type="radio" value="none" name="name" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Student self evaluation</h5>
+        <div>
+          <h4>Untitled</h4>
+          <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>Strongly Disagree</th>
+              <th>Disagree</th>
+              <th>Neutral</th>
+              <th>Agree</th>
+              <th>Strongly Agree</th>
+            </tr>
+            <tr>
+              <td class="first-col">26. I contributed constructively during in-class activities</td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+              <td><input type="radio" value="none" name="contributed" /></td>
+            </tr>
+            <tr>
+              <td class="first-col">27. I feel I am achieving the learning outcomes.</td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+              <td><input type="radio" value="none" name="feel" /></td>
+            </tr>
+          </table>
+        </div>
+        <p class="comments">Comments</p>
+        <textarea rows="5"></textarea>
+        <h5>Comments on strengths and ways of improvement</h5>
+        <p class="comments">What changes would you recommend to improve this course?</p>
+        <textarea rows="5"></textarea>
+        <p class="comments">What did you like best about your instructors teaching?</p>
+        <textarea rows="5"></textarea>
+        <p class="comments">What did you like least about your instructor’s teaching?</p>
+        <textarea rows="5"></textarea>
+        <p class="comments">Any further, constructive comment</p>
+        <textarea rows="5"></textarea>
         <div class="btn-block">
-          <p>By clicking Register, you agree on our <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for W3Docs</a>.</p>
-          <button type="submit" href="/">Submit</button>
+          <button type="submit" href="/">Send</button>
         </div>
       </form>
     </div>
