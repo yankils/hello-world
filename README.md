@@ -1,6 +1,1 @@
-## find complete course here   
-# change done from Azure, 22-11-2021
-# 3rd Change in Boards
-# this change made by saroja and lohia, trail
-[![Image](https://github.com/yankils/Simple-DevOps-Project/blob/master/Devops_course.PNG "DevOps Project - CI/CD with Jenkins Ansible Docker Kubernetes ")](https://www.udemy.com/course/valaxy-devops/?referralCode=8147A5CF4C8C7D9E253F)
-hi pavan
+Thanks
