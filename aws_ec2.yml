@@ -1,0 +1,8 @@
+plugin: aws_ec2
+
+regions:
+  - ap-south-1
+filters:
+  tag:name: new
+hostnames:
+  - ip-address
