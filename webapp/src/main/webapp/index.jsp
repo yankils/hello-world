@@ -1,17 +1,14 @@
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Travel Booking Form</title>
+    <title>Car Booking Form</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
       html, body {
       min-height: 100%;
       }
-      body, div, form, input, select, textarea, p {
+      body, div, form, input, select, textarea, p { 
       padding: 0;
       margin: 0;
       outline: none;
@@ -23,8 +20,7 @@
       h1 {
       position: absolute;
       margin: 0;
-      line-height: 55px;
-      font-size: 55px;
+      font-size: 36px;
       color: #fff;
       z-index: 2;
       }
@@ -40,13 +36,12 @@
       padding: 20px;
       border-radius: 6px;
       background: #fff;
-      box-shadow: 0 0 30px 0 #a37547;
+      box-shadow: 0 0 20px 0 #333; 
       }
       .banner {
       position: relative;
-      height: 230px;
-      background-image: url("/uploads/media/default/0001/02/3dd647f39593e88f45f61aaac6ff3027dce15506.jpeg");
-      background-size: cover;
+      height: 210px;
+      background-image: url("/uploads/media/default/0001/02/328c356e9bba5add698e405d0059aa4207d8f1f6.jpeg");      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -54,12 +49,12 @@
       }
       .banner::after {
       content: "";
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.4); 
       position: absolute;
       width: 100%;
       height: 100%;
       }
-      input, select, textarea {
+      input, textarea, select {
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
@@ -78,24 +73,46 @@
       padding: 5px;
       }
       .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color: #a37547;
+      color: #333;
       }
       .item input:hover, .item select:hover, .item textarea:hover {
       border: 1px solid transparent;
-      box-shadow: 0 0 6px 0 #a37547;
-      color: #a37547;
+      box-shadow: 0 0 6px 0 #333;
+      color: #333;
       }
       .item {
       position: relative;
       margin: 10px 0;
       }
-      input[type=radio], input[type=checkbox]  {
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type="time"]::-webkit-inner-spin-button {
+      margin: 2px 22px 0 0;
+      }
+      input[type=radio], input.other {
       display: none;
       }
       label.radio {
       position: relative;
       display: inline-block;
-      margin: 5px 20px 15px 0;
+      margin: 5px 20px 10px 0;
       cursor: pointer;
       }
       .question span {
@@ -104,23 +121,28 @@
       label.radio:before {
       content: "";
       position: absolute;
+      top: 2px;
       left: 0;
-      width: 17px;
-      height: 17px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       border: 2px solid #ccc;
       }
-      input[type=radio]:checked + label:before, label.radio:hover:before {
-      border: 2px solid #a37547;
+      #radio_5:checked ~ input.other {
+      display: block;
+      }
+      input[type=radio]:checked + label.radio:before {
+      border: 2px solid #444;
+      background: #444;
       }
       label.radio:after {
       content: "";
       position: absolute;
-      top: 6px;
+      top: 7px;
       left: 5px;
-      width: 8px;
+      width: 7px;
       height: 4px;
-      border: 3px solid #a37547;
+      border: 3px solid #fff;
       border-top: none;
       border-right: none;
       transform: rotate(-45deg);
@@ -137,14 +159,14 @@
       width: 150px;
       padding: 10px;
       border: none;
-      border-radius: 5px;
-      background: #6b4724;
+      border-radius: 5px; 
+      background: #444;
       font-size: 16px;
       color: #fff;
       cursor: pointer;
       }
       button:hover {
-      box-shadow: 0 0 18px 0 #3d2914;
+      background: #666;
       }
       @media (min-width: 568px) {
       .name-item, .city-item {
@@ -163,162 +185,135 @@
   </head>
   <body>
     <div class="testbox">
-    <form action="/">
-      <div class="banner">
-        <h1>Travel Booking Form</h1>
-      </div>
-      <div class="item">
-        <p>Passenger contact name</p>
-        <div class="name-item">
-          <input type="text" name="name" placeholder="First" />
-          <input type="text" name="name" placeholder="Last" />
+      <form action="/">
+        <div class="banner">
+          <h1>Car Booking Form</h1>
         </div>
-      </div>
-      <div class="item">
-        <p>Email</p>
-        <input type="email" name="email"/>
-      </div>
-      <div class="item">
-        <p>Phone</p>
-        <input type="text" name="phone" placeholder="### ### ####"/>
-      </div>
-      <div class="item">
-        <p>Address</p>
-        <input type="text" name="name" placeholder="Street address" required/>
-        <input type="text" name="name" placeholder="Street address line 2" required/>
-        <div class="city-item">
-          <input type="text" name="name" placeholder="City" required/>
-          <input type="text" name="name" placeholder="Region" required/>
-          <input type="text" name="name" placeholder="Postal / Zip code" required/>
-          <select required>
-            <option selected value="" disabled>Country</option>
-            <option value="1">Russia</option>
-            <option value="2">Germany</option>
-            <option value="3">France</option>
-            <option value="4">Armenia</option>
-            <option value="5">USA</option>
-          </select>
-        </div>
-      </div>
-      <div class="item">
-        <p>Total number of adults</p>
-        <input type="text" name="adults"/>
-      </div>
-      <div class="item">
-        <p>Adults' names</p>
-        <textarea rows="3"></textarea>
-        Yes
-      </div>
-      <div class="item">
-        <p>Total number of children</p>
-        <input type="text" name="adults"/>
-      </div>
-      <div class="item">
-        <p>Children names and ages</p>
-        <textarea rows="3"></textarea>
-      </div>
-      <div class="item">
-        <p>Type of travel</p>
-        <select required>
-          <option value="">Business</option>
-          <option value="1">Adventure</option>
-          <option value="2">Cultural</option>
-          <option value="3">Cruising</option>
-          <option value="4">Active mobility</option>
-          <option value="5">Active vacation</option>
-          <option value="6">Quiet vacation</option>
-          <option value="7">Package tour</option>
-          <option value="8">Creative trip</option>
-          <option selected value="9">Honeymoon</option>
-        </select>
-      </div>
-      <div class="item">
-        <p>Destination</p>
-        <input type="text" name="destination"/>
-      </div>
-      <div class="item">
-        <p>Preferred hotel / resort</p>
-        <input type="text" name="hotel"/>
-      </div>
-      <div class="item">
-        <p>Number of rooms</p>
-        <input type="text" name="number"/>
-      </div>
-      <div class="item">
-        <p>Size of group</p>
-        <input type="text" name="size"/>
-      </div>
-      <div class="item">
-        <p>King / double / suite / penthouse</p>
-        <input type="text" name="room"/>
-      </div>
-      <div class="question">
-        <p>Transportation to and from hotel</p>
-        <div class="question-answer">
-          <div>
-            <input type="radio" value="none" id="radio_1" name="question1"/>
-            <label for="radio_1" class="radio"><span>Yes</span></label>
-          </div>
-          <div>
-            <input type="radio" value="none" id="radio_2" name="question1"/>
-            <label for="radio_2" class="radio"><span>No</span></label>
+        <div class="item">
+          <p>Name</p>
+          <div class="name-item">
+            <input type="text" name="name" placeholder="First" />
+            <input type="text" name="name" placeholder="Last" />
           </div>
         </div>
-      </div>
-      <div class="item">
-        <p>Estimated trip amount</p>
-        <input type="number" name="amount" placeholder="USD 0.00"/>
-      </div>
-      <div class="question">
-        <p>Is anyone traveling over the Age of 55?</p>
-        <div class="question-answer">
-          <div>
-            <input type="radio" value="none" id="radio_3" name="question2"/>
-            <label for="radio_3" class="radio"><span>Yes</span></label>
-          </div>
-          <div>
-            <input type="radio" value="none" id="radio_4" name="question2"/>
-            <label for="radio_4" class="radio"><span>No</span></label>
+        <div class="item">
+          <p>Email</p>
+          <input type="text" name="name"/>
+        </div>
+        <div class="item">
+          <p>Phone</p>
+          <input type="text" name="name"/>
+        </div>
+        <div class="item">
+          <p>Number of Passengers</p>
+          <input type="text" name="name"/>
+        </div>
+        <div class="item">
+          <p>Contact Address</p>
+          <input type="text" name="name" placeholder="Street address" />
+          <input type="text" name="name" placeholder="Street address line 2" />
+          <div class="city-item">
+            <input type="text" name="name" placeholder="City" />
+            <input type="text" name="name" placeholder="Region" />
+            <input type="text" name="name" placeholder="Postal / Zip code" />
+            <select>
+              <option value="">Country</option>
+              <option value="1">Russia</option>
+              <option value="2">Germany</option>
+              <option value="3">France</option>
+              <option value="4">Armenia</option>
+              <option value="5">USA</option>
+            </select>
           </div>
         </div>
         <div class="question">
-          <p>Does anyone traveling have a military background?</p>
+          <p>Vehicle</p>
           <div class="question-answer">
             <div>
-              <input type="radio" value="none" id="radio_5" name="question3"/>
-              <label for="radio_5" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_1" name="vehicle" />
+              <label for="radio_1" class="radio"><span>Limousine (8-12 person)</span></label>
             </div>
             <div>
-              <input type="radio" value="none" id="radio_6" name="question3"/>
-              <label for="radio_6" class="radio"><span>No</span></label>
+              <input type="radio" value="none" id="radio_2" name="vehicle" />
+              <label for="radio_2" class="radio"><span>SUV (6-7 person)</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_3" name="vehicle" />
+              <label for="radio_3" class="radio"><span>Van (12-15 person)</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_4" name="vehicle" />
+              <label for="radio_4" class="radio"><span>Bus (50+ person)</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_5" name="vehicle" />
+              <label for="radio_5" class="radio other"><span>other:</span></label>
+              <input class="other" type="text" name="name" />
             </div>
           </div>
         </div>
         <div class="item">
-          <p>Special instructions</p>
-          <textarea rows="3"></textarea>
+          <p>Pick Up Date</p>
+          <input type="date" name="bdate" />
+          <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="item">
-          <p>Activities: spa, golf, excursion, event ticket, shows, etc.</p>
-          <textarea rows="3"></textarea>
+          <p>Pick Up Time</p>
+          <input type="time" name="name" />
+          <i class="fas fa-clock"></i>
         </div>
-        <div class="question">
-          <p>Include travel insurance</p>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="none" id="radio_7" name="question4"/>
-              <label for="radio_7" class="radio"><span>Yes</span></label>
-            </div>
-            <div>
-              <input type="radio" value="none" id="radio_8" name="question4"/>
-              <label for="radio_8" class="radio"><span>No</span></label>
-            </div>
+        <div class="item">
+          <p>If pick up from the airport, please enter airport name</p>
+          <input type="text" name="name"/>
+        </div>
+        <div class="item">
+          <p>Flight Number</p>
+          <input type="text" name="name"/>
+        </div>
+        <div class="item">
+          <p>Pick Up Point</p>
+          <input type="text" name="name" placeholder="Street address" />
+          <input type="text" name="name" placeholder="Street address line 2" />
+          <div class="city-item">
+            <input type="text" name="name" placeholder="City" />
+            <input type="text" name="name" placeholder="Region" />
+            <input type="text" name="name" placeholder="Postal / Zip code" />
+            <select>
+              <option value="">Country</option>
+              <option value="1">Russia</option>
+              <option value="2">Germany</option>
+           <option value="3">France</option>
+              <option value="4">Armenia</option>
+              <option value="5">USA</option>
+            </select>
           </div>
+        </div>
+        <div class="item">
+          <p>Destination</p>
+          <input type="text" name="name" placeholder="Street address" />
+          <input type="text" name="name" placeholder="Street address line 2" />
+          <div class="city-item">
+            <input type="text" name="name" placeholder="City" />
+            <input type="text" name="name" placeholder="Region" />
+            <input type="text" name="name" placeholder="Postal / Zip code" />
+            <select>
+              <option value="">Country</option>
+              <option value="1">Russia</option>
+              <option value="2">Germany</option>
+              <option value="3">France</option>
+              <option value="4">Armenia</option>
+              <option value="5">USA</option>
+            </select>
+          </div>
+        </div>
+        <div class="item">
+          <p>Notes</p>
+          <textarea rows="3"></textarea>
         </div>
         <div class="btn-block">
-          <button type="submit" href="/">Book</button>
+          <button type="submit" href="/">SEND</button>
         </div>
-    </form>
+      </form>
     </div>
   </body>
 </html>
