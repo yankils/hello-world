@@ -1,64 +1,65 @@
-<Html>  
-<head>   
-<title>  
-Registration Page  
-</title>  
-</head>  
-<body bgcolor="Lightskyblue">  
-<br>  
-<br>  
-<form>  
-  
-<label> Firstname </label>         
-<input type="text" name="firstname" size="15"/> <br> <br>  
-<label> Middlename: </label>     
-<input type="text" name="middlename" size="15"/> <br> <br>  
-<label> Lastname: </label>         
-<input type="text" name="lastname" size="15"/> <br> <br>  
-  
-<label>   
-Course :  
-</label>   
-<select>  
-<option value="Course">Course</option>  
-<option value="BCA">BCA</option>  
-<option value="BBA">BBA</option>  
-<option value="B.Tech">B.Tech</option>  
-<option value="MBA">MBA</option>  
-<option value="MCA">MCA</option>  
-<option value="M.Tech">M.Tech</option>  
-</select>  
-  
-<br>  
-<br>  
-<label>   
-Gender :  
-</label><br>  
-<input type="radio" name="male"/> Male <br>  
-<input type="radio" name="female"/> Female <br>  
-<input type="radio" name="other"/> Other  
-<br>  
-<br>  
-  
-<label>   
-Phone :  
-</label>  
-<input type="text" name="country code"  value="+91" size="2"/>   
-<input type="text" name="phone" size="10"/> <br> <br>  
-Address  
-<br>  
-<textarea cols="80" rows="5" value="address">  
-</textarea>  
-<br> <br>  
-Email:  
-<input type="email" id="email" name="email"/> <br>    
-<br> <br>  
-Password:  
-<input type="Password" id="pass" name="pass"> <br>   
-<br> <br>  
-Re-type password:  
-<input type="Password" id="repass" name="repass"> <br> <br>  
-<input type="button" value="Submit"/>  
-</form>  
-</body>  
-</html>  
+<html>
+<head>
+<title>registration form</title>
+</head>
+
+<h2 ALIGN="CENTER">Registration form</h2>
+
+<form action="Welcome.html" method="post">
+<table border="0" align="center">
+<tbody>
+
+<tr>
+<td><label for="id">Id: </label></td>
+<td><input id="id" maxlength="50" name="name" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="name">Name: </label></td>
+<td><input id="name" maxlength="50" name="name" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="course">Course: </label></td>
+<td><input id="course" maxlength="50" name="course" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="branch">Branch: </label></td>
+<td><input id="branch" maxlength="50" name="branch" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="rolln0">Rollno: </label></td>
+<td><input id="rollno" maxlength="50" name="rollno" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="email">Email_Address:</label></td>
+<td><input id="email" maxlength="50" name="email" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="username">User_Name:</label></td>
+<td><input id="username" maxlength="50" name="username" type="text" /></td>
+</tr>
+
+<tr>
+<td><label for="aboutus">About Us:</label></td>
+<td valign="middle" align="center"><textarea></textarea></td>
+</tr>
+
+<tr>
+<td><label for="password">Password:</label></td>
+<td><input id="password" maxlength="50" name="password"
+type="password" /></td>
+</tr>
+
+<tr>
+<td align="right"><input name="Submit" type="Submit" value="Add" /></td>
+</tr>
+
+</tbody>
+</table>
+</form>
+</html>
