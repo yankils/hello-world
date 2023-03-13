@@ -11,7 +11,7 @@
     <br>
 
 
-    <label for="email"><b>Email</b></label>
+    <label for="EMAIL"><b>Email</b></label>
     <input type="text" placeholder="ENTER EMAIL" name="email" id="email" required>
     
     <br>
