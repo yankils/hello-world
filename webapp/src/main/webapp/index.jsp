@@ -1,6 +1,6 @@
 <html>
 <head>
-	<marquee> <h1 align='center'><u>ROHITH VALUPADASU</u><h1></marquee>
+	<marquee> <h1><u>ROHITH VALUPADASU</u><h1></marquee>
 	<title>time table</title>
 </head>
 <body bgcolor="skyblue">
