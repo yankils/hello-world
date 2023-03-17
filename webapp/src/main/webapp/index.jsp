@@ -67,7 +67,7 @@
 </tr>
 <tr>
  <td align="center">SATURDAY
- <td align="center"><font color="red">SUB1<br>
+ <td align="center"><font color="yellow">SUB1<br>
  <td colspan="3" align="center">seminar
  <td align="center"><font color="pink">SUB4<br>
  <td align="center"><font color="brown">SUB5<br>
