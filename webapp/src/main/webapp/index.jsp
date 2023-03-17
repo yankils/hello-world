@@ -1,7 +1,7 @@
 <html>
 <head>
-   <h1 align='center'><u>ROHITH VALUPADASU</u><h1>
-   <title>time table</title>
+	<marquee> <h1 align='center'><u>ROHITH VALUPADASU</u><h1></marquee>
+	<title>time table</title>
 </head>
 <body bgcolor="skyblue">
 <H1><FONT COLOR="DARKCYAN"><CENTER>COLLEGE TIME TABLE</FONT></H1>
