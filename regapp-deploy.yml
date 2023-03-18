@@ -1,7 +1,7 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: valaxy-regapp
+  name: supriya-regapp
   labels: 
      app: regapp
 
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: valaxy/regapp
+        image: supriya/regapp
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
