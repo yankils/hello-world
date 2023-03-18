@@ -1,37 +1,77 @@
-<form action="action_page.php">
-  <div class="container">
-    <h1>New user Register for DevOps Learning</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-     
-    <label for="Name"><b>Enter Name</b></label>
-    <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
-    <br>
-    
-    <label for="mobile"><b>Enter mobile</b></label>
-    <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
-    <br>
-
-    <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-    <br>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <br>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-    <br>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
-
-   <h1> Thankyou, Happy Learning </h1>
-
-  
-</form>
+<html>
+<head>
+	<marquee> <h1 color='red'><u>ROHITH VALUPADASU</u><h1></marquee>
+	<title>time table</title>
+</head>
+<body bgcolor="skyblue">
+<H1><FONT COLOR="DARKCYAN"><CENTER>COLLEGE TIME TABLE</FONT></H1>
+<table border="2" cellspacing="3" align="center">
+<tr>
+ <td align="center">
+ <td>8:30-9:30
+ <td>9:30-10:30
+ <td>10:3-11:30
+ <td>11:30-12:30
+ <td>12:30-2:00
+ <td>2:00-3:00
+ <td>3:00-4:00
+ <td>4:00-5:00
+</tr>
+<tr>
+ <td align="center">MONDAY
+ <td align="center">---<td align="center"><font color="blue">SUB1<br>
+ <td align="center"><font color="pink">SUB2<br>
+ <td align="center"><font color="red">SUB3<br>
+ <td rowspan="6"align="center">L<br>U<br>N<br>C<br>H
+ <td align="center"><font color="maroon">SUB4<br>
+ <td align="center"><font color="brown">SUB5<br>
+ <td align="center">counselling class
+</tr>
+<tr>
+ <td align="center">TUESDAY
+ <td align="center"><font color="blue">SUB1<br>
+ <td align="center"><font color="red">SUB2<br>
+ <td align="center"><font color="pink">SUB3<br>
+ <td align="center">---
+ <td align="center"><font color="orange">SUB4<BR>
+ <td align="center"><font color="maroon">SUB5<br>
+ <td align="center">library
+</tr>
+<tr>
+ <td align="center">WEDNESDAY
+ <td align="center"><font color="pink">SUB1<br>
+ <td align="center"><font color="orange">SUB2<BR>
+ <td align="center"><font color="brown">SWA<br>
+ <td align="center">---
+ <td colspan="3" align="center"><font color="green"> lab
+</tr>
+<tr>
+ <td align="center">THURSDAY
+ <td align="center">SUB1<br>
+ <td align="center"><font color="brown">SUB2<br>
+ <td align="center"><font color="orange">SUB3<BR>
+ <td align="center">---
+ <td align="center"><font color="blue">SUB4<br>
+ <td align="center"><font color="red">SUB5<br>
+ <td align="center">library
+</tr>
+<tr>
+ <td align="center">FRIDAY
+ <td align="center"><font color="orange">SUB1<BR>
+ <td align="center"><font color="maroon">SUB2<br>
+ <td align="center"><font color="blue">SUB3<br>
+ <td align="center">---
+ <td align="center"><font color="pink">SUB4<br>
+ <td align="center"><font color="brown">SUB5<br>
+ <td align="center">library
+</tr>
+<tr>
+ <td align="center">SATURDAY
+ <td align="center"><font color="yellow">SUB1<br>
+ <td colspan="3" align="center">seminar
+ <td align="center"><font color="pink">SUB4<br>
+ <td align="center"><font color="brown">SUB5<br>
+ <td align="center">library
+</tr>
+</body>
+</html>
