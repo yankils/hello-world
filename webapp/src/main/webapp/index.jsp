@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>I AM THE STAR UP IN THE SKY AND AM THE MOUNTAIN PICK UP HIGH</h1>
+    <h1>HEAL THE WORLD, MAKE IT A BETTER DAY FOR YOU ANS FOR ME...</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
