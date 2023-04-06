@@ -32,6 +32,10 @@
   </div>
 
    <h1> Thankyou, Happy Learning AvinashKunapareddy </h1>
+  <font size="6"
+          color="rgb(128, 128, 0)">
+          Bindu Varalakshmi!
+    </font>
 
   
 </form>
