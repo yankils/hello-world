@@ -80,7 +80,7 @@
   <body>
     <div class="main-block">
       <div class="block-item left">
-        <h1>Sign up with:</h1>
+        <h1>New user Register:</h1>
         <p><small>W3docs provides free learning materials for programming languages like HTML, CSS, Java Script, PHP etc.</small>
         </p>
       </div>
