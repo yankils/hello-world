@@ -69,6 +69,9 @@
       .facebook {
       background: #3a589e;
       }
+      .instagram {
+      background: #3a589e;
+      }
       .twitter {
       background: #429cd6;
       }
@@ -86,6 +89,9 @@
       </div>
       <div class="block-item right">
         <button class="btn facebook" data-provider="facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></button>
+
+	<button class="btn instagram" data-provider="instagram"><i class="fab fa-instagram-f"></i><span>instagram</span></button>
+
         <button class="btn twitter" data-provider="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></button>
         <button class="btn google" data-provider="google"><i class="fab fa-google"></i><span>Google</span></button>
       </div>
