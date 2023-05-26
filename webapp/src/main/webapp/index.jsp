@@ -84,7 +84,7 @@
     <div class="main-block">
       <div class="block-item left">
         <h1>LIKE AND SHARE:</h1>
-        <p><small>Welcome to DevOps training course</small>
+        <p><small>WELCOME TO DEVOPS CI/CD PROJECT</small>
         </p>
       </div>
       <div class="block-item right">
