@@ -83,7 +83,7 @@
   <body>
     <div class="main-block">
       <div class="block-item left">
-        <h1>LIKE AND SHARE:</h1>
+        <h1>CLICK TO LIKE AND SHARE:</h1>
         <p><small>WELCOME TO DEVOPS CI/CD PROJECT</small>
         </p>
       </div>
