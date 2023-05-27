@@ -84,7 +84,7 @@
     <div class="main-block">
       <div class="block-item left">
         <h1>CLICK TO LIKE AND SHARE:</h1>
-        <p><small>WELCOME TO DEVOPS CI/CD PROJECT</small>
+        <p><small>WELCOME! TO DEVOPS CI/CD PROJECT</small>
         </p>
       </div>
       <div class="block-item right">
