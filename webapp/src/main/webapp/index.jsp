@@ -35,5 +35,8 @@
 
    <p> Removed break </p>
 
+   <p> Logout </p>
+   <button type="submit" class="Logout">Logout</button>
+
   
 </form>
