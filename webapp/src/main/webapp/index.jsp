@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>This is our docker session end to end for June batch 24-June , we are checking docker CICD automation </h1>
+    <h1>Ansible Session end to end 09 July  </h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
