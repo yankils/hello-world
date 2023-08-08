@@ -1,5 +1,8 @@
-<button class="btn success">Success</button>
-<button class="btn info">Info</button>
-<button class="btn warning">Warning</button>
-<button class="btn danger">Danger</button>
-<button class="btn default">Default</button>
+<div class="img-comp-container">
+  <div class="img-comp-img">
+    <img src="img_snow.jpg" width="300" height="200">
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src="img_forest.jpg" width="300" height="200">
+  </div>
+</div>
