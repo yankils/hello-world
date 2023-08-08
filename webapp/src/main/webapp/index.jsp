@@ -1,8 +1,5 @@
-<div class="img-comp-container">
-  <div class="img-comp-img">
-    <img src="img_snow.jpg" width="300" height="200">
-  </div>
-  <div class="img-comp-img img-comp-overlay">
-    <img src="img_forest.jpg" width="300" height="200">
-  </div>
-</div>
+<button class="button button1">2px</button>
+<button class="button button2">4px</button>
+<button class="button button3">8px</button>
+<button class="button button4">12px</button>
+<button class="button button5">50%</button>
