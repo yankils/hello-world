@@ -1,7 +1,7 @@
 <form action="action_page.php">
   <div class="container">
     <h2>Subscribe to our Newsletter</h2>
-    <p>Nihal Mohadikar..</p>
+    <p>Shashikala Mohadikar..</p>
   </div>
 
   <div class="container" style="background-color:white">
