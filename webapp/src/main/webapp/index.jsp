@@ -1,9 +1,8 @@
-<button class="btn success">Success</button>
-<button class="btn info">Info</button>
-<button class="btn warning">Warning</button>
-<button class="btn danger">Danger</button>
-<button class="btn default">Default</button>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 .btn {
   border: none;
   background-color: inherit;
@@ -13,7 +12,6 @@
   display: inline-block;
 }
 
-/* On mouse-over */
 .btn:hover {background: #eee;}
 
 .success {color: green;}
@@ -21,3 +19,17 @@
 .warning {color: orange;}
 .danger {color: red;}
 .default {color: black;}
+</style>
+</head>
+<body>
+
+<h2>Text Buttons</h2>
+
+<button class="btn success">Success</button>
+<button class="btn info">Info</button>
+<button class="btn warning">Warning</button>
+<button class="btn danger">Danger</button>
+<button class="btn default">Default</button>
+
+</body>
+</html>
