@@ -1,7 +1,7 @@
 <form action="action_page.php">
   <div class="container">
     <h2>Subscribe to our Newsletter</h2>
-    <p>Bewda Manus Kamptee Wala..</p>
+    <p>Bewda Manus Kamptee Wala (Tillu Bam)..</p>
   </div>
 
   <div class="container" style="background-color:white">
