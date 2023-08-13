@@ -1,7 +1,7 @@
 <form action="action_page.php">
   <div class="container">
     <h2>Subscribe to our Newsletter</h2>
-    <p>Shashikala Mohadikar..</p>
+    <p>Bewda Manus Kamptee Wala..</p>
   </div>
 
   <div class="container" style="background-color:white">
