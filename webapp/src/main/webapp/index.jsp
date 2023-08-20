@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
-</body>
-</html>
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Smaller text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
 ~
 ~
 ~
