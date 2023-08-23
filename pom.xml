@@ -30,8 +30,8 @@
   </distributionManagement>
 
   <build>
-<!--     <plugins>
-      <plugin>
+    <plugins>
+<!--       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.7</source>
