@@ -18,7 +18,6 @@
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
     <br>
 
-
     <label for="PAN card"><b>Enter PAN card</b></label>
     <input type="text" placeholder="Enter PAN card" name="PAn card" id="pan" required>
     <br>
