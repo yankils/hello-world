@@ -7,7 +7,7 @@ pipeline {
         //     }
         // }
         
-        stage('clone repo') {
+        stage('clone repos') {
             steps {
                 sh "git clone https://github.com/fasil916/hello-world.git"
             }
