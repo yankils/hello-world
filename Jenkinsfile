@@ -9,7 +9,7 @@ pipeline {
         
         stage('clone repo') {
             steps {
-                sh "git clone https://github.com/yankils/hello-world.git"
+                sh "git clone https://github.com/fasil916/hello-world.git"
             }
         }
         
