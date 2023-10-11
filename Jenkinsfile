@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('clean dir') {
-            steps {
-                deleteDir()
-            }
-        }
+        // stage('clean dir') {
+        //     steps {
+        //         deleteDir()
+        //     }
+        // }
         
         stage('clone repo') {
             steps {
