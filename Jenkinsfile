@@ -1,25 +1,15 @@
 pipeline {
     agent any
+
+     parameters {
+        booleanParam(name: 'myboolean', defaultValue: false, description: 'service enable ?')
+     }
     stages {
-        // stage('clean dir') {
-        //     steps {
-        //         deleteDir()
-        //     }
-        // }
-        
-        stage('clone repos') {
+        stage('echo') {
             steps {
-                sh "git clone https://github.com/fasil916/hello-world.git"
+                echo "boolean parameter set to: ${params.mybool}"
             }
         }
-        
-    stage('build') {
-            steps {
-                dir("hello-world") {
-                sh "mvn clean install"
-                }
-            }
-        }    
     }        
 
 }
