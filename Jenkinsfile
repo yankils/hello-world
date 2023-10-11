@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('clean dir') {
+            steps {
+                deleteDir()
+            }
+        }
+        
+        stage('clone repo') {
+            steps {
+                sh "git clone https://github.com/yankils/hello-world.git"
+            }
+        }
+        
+    stage('build') {
+            steps {
+                dir("hello-world") {
+                sh "mvn clean install"
+                }
+            }
+        }    
+    }        
+
+}
