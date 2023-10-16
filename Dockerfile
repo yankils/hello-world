@@ -1,4 +1,4 @@
-FROM tomcat:latest
-RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
-COPY ./*.war /usr/local/tomcat/webapps
+FROM 9639287812/newtom:latest
+WORKDIR /usr/local/tomcat/webapps
+COPY /opt/docker/webapp/target/*.war . 
 
