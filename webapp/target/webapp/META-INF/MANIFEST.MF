@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: bmunguriek
+Build-Jdk: Oracle OpenJDK version 17.0.6
+
