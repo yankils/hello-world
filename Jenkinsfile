@@ -18,7 +18,7 @@ pwd'''
 
     stage('publish') {
       steps {
-        archiveArtifacts(artifacts: 'webapp/target/*.war', fingerprint: true, onlyIfSuccessful: true)
+        archiveArtifacts(artifacts: '/var/lib/jenkins/workspace/ddd/webapp/target/*.war', fingerprint: true, onlyIfSuccessful: true)
       }
     }
 
