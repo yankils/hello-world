@@ -18,7 +18,7 @@ pwd'''
 
     stage('publish') {
       steps {
-        archiveArtifacts(artifacts: 'build/lib/*.war', fingerprint: true, onlyIfSuccessful: true)
+        archiveArtifacts(artifacts: 'target/*.war', fingerprint: true, onlyIfSuccessful: true)
       }
     }
 
