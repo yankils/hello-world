@@ -18,7 +18,7 @@ pwd'''
 
     stage('publish') {
       steps {
-        archiveArtifacts(artifacts: 'target/*.war', fingerprint: true, onlyIfSuccessful: true)
+        archiveArtifacts(artifacts: 'webapp/target/*.war', fingerprint: true, onlyIfSuccessful: true)
       }
     }
 
