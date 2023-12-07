@@ -1,3 +1,5 @@
+![image](/cicd-flow-final.png)
+
 ## Learn CI/CD with Jenkins
 Documenting the learning journey. Took the reference from a course and added my own enhancements and experiments.
 
