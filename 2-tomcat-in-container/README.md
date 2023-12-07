@@ -1,7 +1,7 @@
 ![image](/2-tomcat-in-container/cicd-flow-2.png)
 
 
-Spin up a new EC2 instance and we'll call it as dockerhost. Let this be on the same subnet as previous instances. Create a dockeradmin user and allow ssh via /etc/ssh/sshd_config
+Spin up a new EC2 instance as "dockerhost". Alternatively, can reuse the tomcat instance. Dockerhost needs to be on same subnet as Jenkins instance. Create a dockeradmin user and allow ssh via /etc/ssh/sshd_config
 
 There are 3 different ways to create a custom Tomcat image.
 
