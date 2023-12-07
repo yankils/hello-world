@@ -3,13 +3,14 @@
 
 Spin up a new EC2 instance as "dockerhost". Alternatively, can reuse the tomcat instance. Dockerhost needs to be on same subnet as Jenkins instance. Create a dockeradmin user and allow ssh via /etc/ssh/sshd_config
 
+## Install Docker
+Follow the steps from https://docs.docker.com/engine/install/centos/#install-using-the-repository
+
+## Create Tomcat container image
 There are 3 different ways to create a custom Tomcat image.
-
-Option 1: from the scratch - Use a centos container and install tar file
-
-Option 2: Use a centos container, yum install and start tomcat systemctl service
-
-Option 3: easiest - Deploy a tomcat container
+- Option 1: from the scratch - Use a centos container and install tar file
+- Option 2: Use a centos container, yum install and start tomcat systemctl service
+- Option 3: easiest - Deploy a tomcat container
 
 ### Option 1: Create Tomcat docker image from CentOS image
 pull centos from dockerhub
@@ -56,12 +57,12 @@ RUN cp -r webapps.dist/* webapps/
 Copy the webapps directory from jenkinshost `/var/lib/jenkins/workspace/<jenkins-job-name>/` to dockerhost.
 Refer Dockerfile. Should include `RUN cp ./*.war webapps/`
 
-### Make Jenkins create a Docker image and deploy on Docker host (CD)
-#### Add Dockerhost on Jenkins
+## Make Jenkins create a Docker image and deploy on Docker host (CD)
+### Add Dockerhost on Jenkins
 - Install “Publish over ssh” plugin in Jenkins. Go to System > Configuration and add the server with key or password.
 - Course recommends the password but let's use the SSH key for enhanced security. Create the SSH key for Jenkins from another machine, not dockerhost. Put the public key in dockerhost’s ~/.ssh/authorized_keys
 - Go to Manage Jenkins > System > Publish over SSH section. Add the private key. Add a SSH host with dockerhost's private ip (such as 172.31.x.x) and dockeradmin user. 
-#### Update Jenkins job
+### Update Jenkins job
 - Create /opt/docker in dockerhost and give ownership to dockeradmin user
 - Place Dockerfile in `/opt/docker`
 - Update Jenkins job’s post-build action > Remote directory to generate file to `//opt/docker`. Use double slashes otherwise the artifact gets copied to dockeradmin’s home directory `/home/dockeradmin`.
