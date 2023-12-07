@@ -1,5 +1,5 @@
 <h1> Hello, Welcome to Simple DevOps Project! </h1>
-<h2> Deploying on Kubernetes using Ansible for Valaxy Technologies </h2>
+<h2> Deploying on Kubernetes using Ansible with Jiwon </h2>
 <h2> Glad to see you here </h2>
 
 <%-- Below section is only for Chapter 3-20 "Deploy Artifacts on a Tomcat server"
