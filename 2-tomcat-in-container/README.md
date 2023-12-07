@@ -1,3 +1,6 @@
+![image](/2-tomcat-in-container/cicd-flow-2.png)
+
+
 Spin up a new EC2 instance and we'll call it as dockerhost. Let this be on the same subnet as previous instances. Create a dockeradmin user and allow ssh via /etc/ssh/sshd_config
 
 There are 3 different ways to create a custom Tomcat image.
@@ -35,18 +38,19 @@ RUN mv apache-tomcat-9.0.83/* /opt/tomcat
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 ```
-`docker build -t mytomcat .`
+Build the image and start the container
+```
+docker build -t mytomcat .
+docker run -d --name tomcat -p 8090:8080 mytomcat
+```
 
-### Option 3: Create tomcat container with webapp
+### Option 3: Create custom tomcat container
+Copy the webapps directory from jenkinshost `/var/lib/jenkins/workspace/<jenkins-job-name>/` to dockerhost.
 #### Dockerfile
 ```
 from tomcat:latest
 #WORKDIR /usr/local/tomcat # already included in base image
 RUN cp -r webapps.dist/* webapps/
-```
-Run the custom tomcat container
-```
-docker run -d --name tomcat -p 8090:8080 tomcat
 ```
 
 ### Make Jenkins create a Docker image and deploy on Docker host (CD)
