@@ -1,3 +1,5 @@
+![image](/1-jenkins-maven-github/cicd-flow-1.png)
+
 Objective 1: Make Jenkins to read a public repo from Github. Manually trigger a build using Maven and deploy to a Tomcat server. Jenkins should have Tomcat’s role and credential
 
 Objective 2: Configure Github webhook. Make a commit from the local machine to origin repo, to make Github send webhook for Jenkins for CI. Check if Tomcat runs an updated webapp.
