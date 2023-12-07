@@ -44,8 +44,7 @@ docker build -t mytomcat .
 docker run -d --name tomcat -p 8090:8080 mytomcat
 ```
 
-### Option 3: Create custom tomcat container
-Copy the webapps directory from jenkinshost `/var/lib/jenkins/workspace/<jenkins-job-name>/` to dockerhost.
+### Option 3: Use tomcat image
 #### Dockerfile
 ```
 from tomcat:latest
@@ -53,8 +52,25 @@ from tomcat:latest
 RUN cp -r webapps.dist/* webapps/
 ```
 
+### Create a custom tomcat image
+Copy the webapps directory from jenkinshost `/var/lib/jenkins/workspace/<jenkins-job-name>/` to dockerhost.
+Refer Dockerfile. Should include `RUN cp ./*.war webapps/`
+
 ### Make Jenkins create a Docker image and deploy on Docker host (CD)
-- Install “Publish over ssh” plugin. Go to Jenkins System > Configuration and add the server with key or password.
+#### Add Dockerhost on Jenkins
+- Install “Publish over ssh” plugin in Jenkins. Go to System > Configuration and add the server with key or password.
 - Course recommends the password but let's use the SSH key for enhanced security. Create the SSH key for Jenkins from another machine, not dockerhost. Put the public key in dockerhost’s ~/.ssh/authorized_keys
-- Install "Publish over SSH" plugin on Jenkins
 - Go to Manage Jenkins > System > Publish over SSH section. Add the private key. Add a SSH host with dockerhost's private ip (such as 172.31.x.x) and dockeradmin user. 
+#### Update Jenkins job
+- Create /opt/docker in dockerhost and give ownership to dockeradmin user
+- Place Dockerfile in `/opt/docker`
+- Update Jenkins job’s post-build action > Remote directory to generate file to `//opt/docker`. Use double slashes otherwise the artifact gets copied to dockeradmin’s home directory `/home/dockeradmin`.
+- Update exec command. Enhancement: Added build number and cleanup to support the repeated builds
+```
+cd /opt/docker;
+docker rm regapp -f;
+docker build -t regapp:$BUILD_NUMBER .;
+docker run -d --name regapp -p 8088:8080 regapp:$BUILD_NUMBER;
+```
+
+Now a git push will create the new Docker image locally and deploy a container.
