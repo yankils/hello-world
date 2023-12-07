@@ -22,9 +22,10 @@ eksctl create cluster --name jiwon-eks  \
 --nodes-min 2 \
 --nodes-max 3
 ```
-To delete the cluster `eksctl delete cluster jiwon-eks --region ap-southeast-1`
+Once done, delete the cluster to avoid excessive charges. `eksctl delete cluster jiwon-eks --region ap-southeast-1`
 
 ## Create a k8s deployment and expose it via LoadBalancer
+Use the latest tag on image to fetch the latest image.
 ```
 kubectl create -f regapp-deployment.yaml
 kubectl expose deployment regapp --type=LoadBalancer
