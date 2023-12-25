@@ -1,12 +1,12 @@
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: valaxy-regapp
-  labels: 
+  name: regapp
+  labels:
      app: regapp
 
 spec:
-  replicas: 2 
+  replicas: 2
   selector:
     matchLabels:
       app: regapp
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: valaxy/regapp
+        image: calvadosv/regapp:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

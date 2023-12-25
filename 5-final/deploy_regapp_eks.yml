@@ -1,0 +1,19 @@
+---
+- hosts: ansiblehost
+  tasks:
+  # Cluster is precreated to save time
+  #- name: create eks cluster
+  #  command: eksctl create cluster --name jiwon-eks --region ap-southeast-1 --node-type t2.small --nodes-min 2 --nodes-max 3
+  - name: check eks cluster
+    command: eksctl get cluster
+  - name: generate kubeconfig for kubectl
+    command: aws eks update-kubeconfig --region ap-southeast-1 --name jiwon-eks
+  - name: cleanup deployment and service from eks
+    shell: |
+      kubectl delete svc regapp
+      kubectl delete deployment regapp
+    ignore_errors: yes
+  - name: deploy regapp deployment
+    shell: |
+      kubectl create -f /opt/docker/regapp-deployment.yaml
+      kubectl expose deployment regapp --port=8080 --type=LoadBalancer

@@ -1,0 +1,10 @@
+---
+- hosts: dockerhost
+
+  tasks:
+  - name: cleanup existing container
+    command: docker rm regapp-container -f
+  - name: cleanup existing image
+    command: docker image rm calvadosv/regapp:latest -f
+  - name: create container
+    command: docker run -d --name regapp-container -p 8088:8080 calvadosv/regapp:latest

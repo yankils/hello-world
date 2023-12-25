@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: valaxy-service
+  name: regapp
   labels:
-    app: regapp 
+    app: regapp
 spec:
   selector:
     app: regapp 
