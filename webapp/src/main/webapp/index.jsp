@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>devops CI/CD  Session 25 Dec Merry Christmas </h1>
+    <h1>devops CI/CD  Session 28 Dec end to end session </h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
