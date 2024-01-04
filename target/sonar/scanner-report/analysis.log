@@ -1,0 +1,75 @@
+SonarQube plugins:
+  - Python Code Quality and Security 3.4.1.8066 (python)
+  - CSS Code Quality and Security 1.4.2.2002 (cssfamily)
+  - Go Code Quality and Security 1.8.3.2219 (go)
+  - JaCoCo 1.1.1.1157 (jacoco)
+  - Kotlin Code Quality and Security 1.8.3.2219 (kotlin)
+  - JavaScript/TypeScript Code Quality and Security 7.4.4.15624 (javascript)
+  - Ruby Code Quality and Security 1.8.3.2219 (ruby)
+  - Scala Code Quality and Security 1.8.3.2219 (sonarscala)
+  - C# Code Quality and Security 8.22.0.31243 (csharp)
+  - Java Code Quality and Security 6.15.1.26025 (java)
+  - HTML Code Quality and Security 3.4.0.2754 (web)
+  - Flex Code Quality and Security 2.6.1.2564 (flex)
+  - XML Code Quality and Security 2.2.0.2973 (xml)
+  - PHP Code Quality and Security 3.17.0.7439 (php)
+  - VB.NET Code Quality and Security 8.22.0.31243 (vbnet)
+Global server settings:
+  - sonar.core.id=BF41A1F2-AYKXlZsAttNas49DNTLG
+  - sonar.core.startTime=2022-08-13T14:22:16+0000
+  - sonar.forceAuthentication=true
+Project server settings:
+Project scanner properties:
+  - sonar.host.url=http://52.3.221.219:9000
+  - sonar.links.ci=
+  - sonar.links.homepage=http://www.example.com
+  - sonar.links.issue=
+  - sonar.links.scm=http://github.com/jleetutorial/maven-project
+  - sonar.links.scm_dev=scm:git:git@github.com:jleetutorial/maven-project.git
+  - sonar.login=******
+  - sonar.moduleKey=mavenproject:com.example.maven-project:maven-project
+  - sonar.modules=com.example.maven-project:server,com.example.maven-project:webapp
+  - sonar.projectBaseDir=/opt/hello-world
+  - sonar.projectBuildDir=/opt/hello-world/target
+  - sonar.projectDescription=Sample Maven project with a working, deployable site.
+  - sonar.projectKey=mavenproject
+  - sonar.projectName=Maven Project
+  - sonar.projectVersion=1.0-SNAPSHOT
+  - sonar.scanner.app=ScannerMaven
+  - sonar.scanner.appVersion=3.9.1.2184/3.8.6
+  - sonar.sourceEncoding=utf-8
+  - sonar.sources=/opt/hello-world/pom.xml
+  - sonar.working.directory=/opt/hello-world/target/sonar
+Scanner properties of module: mavenproject:com.example.maven-project:webapp
+  - sonar.java.libraries=/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar,/root/.m2/repository/javax/servlet/jsp/jsp-api/2.2/jsp-api-2.2.jar
+  - sonar.java.source=1.6
+  - sonar.java.target=1.6
+  - sonar.java.test.libraries=/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar,/root/.m2/repository/javax/servlet/jsp/jsp-api/2.2/jsp-api-2.2.jar
+  - sonar.libraries=/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar,/root/.m2/repository/javax/servlet/jsp/jsp-api/2.2/jsp-api-2.2.jar
+  - sonar.links.homepage=http://www.example.com/webapp
+  - sonar.links.scm=http://github.com/jleetutorial/maven-project/webapp
+  - sonar.links.scm_dev=scm:git:git@github.com:jleetutorial/maven-project.git/webapp
+  - sonar.moduleKey=mavenproject:com.example.maven-project:webapp
+  - sonar.projectBaseDir=/opt/hello-world/webapp
+  - sonar.projectBuildDir=/opt/hello-world/webapp/target
+  - sonar.projectDescription=Webapp.
+  - sonar.projectKey=mavenproject:com.example.maven-project:webapp
+  - sonar.projectName=Webapp
+  - sonar.sources=/opt/hello-world/webapp/src/main/webapp,/opt/hello-world/webapp/pom.xml
+  - sonar.working.directory=/opt/hello-world/webapp/target/sonar
+Scanner properties of module: mavenproject:com.example.maven-project:server
+  - sonar.java.source=1.6
+  - sonar.java.target=1.6
+  - sonar.java.test.libraries=/root/.m2/repository/junit/junit-dep/4.10/junit-dep-4.10.jar,/root/.m2/repository/org/hamcrest/hamcrest-core/1.2.1/hamcrest-core-1.2.1.jar,/root/.m2/repository/org/hamcrest/hamcrest-library/1.2.1/hamcrest-library-1.2.1.jar,/root/.m2/repository/org/mockito/mockito-core/1.8.5/mockito-core-1.8.5.jar,/root/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar
+  - sonar.links.homepage=http://www.example.com/server
+  - sonar.links.scm=http://github.com/jleetutorial/maven-project/server
+  - sonar.links.scm_dev=scm:git:git@github.com:jleetutorial/maven-project.git/server
+  - sonar.moduleKey=mavenproject:com.example.maven-project:server
+  - sonar.projectBaseDir=/opt/hello-world/server
+  - sonar.projectBuildDir=/opt/hello-world/server/target
+  - sonar.projectDescription=Logic.
+  - sonar.projectKey=mavenproject:com.example.maven-project:server
+  - sonar.projectName=Server
+  - sonar.sources=/opt/hello-world/server/pom.xml,/opt/hello-world/server/src/main/java
+  - sonar.tests=/opt/hello-world/server/src/test/java
+  - sonar.working.directory=/opt/hello-world/server/target/sonar
