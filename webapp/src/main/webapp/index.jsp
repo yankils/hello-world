@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>Automation try 1 : Poll SCM test : devops CI/CD  Session 07Jan to deploy to docker : Try again   </h1>
+    <h1>Automation try 2 : Poll SCM test : devops CI/CD  Session 07Jan to deploy to docker : Try again   </h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
