@@ -16,6 +16,11 @@
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
     <br>
 
+    <label for="country code"><b>Enter country code</b></label>
+    <input type="text" placeholder="Enter country code" name="country code" id="country code" required>
+    <br>
+
+
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
     <br>
