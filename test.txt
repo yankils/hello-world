@@ -1,0 +1,151 @@
+
+
+Questions for Node 1
+
+1. Network Configuration – Configure node1 with above details hostname,ip, dns
+
+Ans-
+
+Check the interface name,
+# ifconfig  == Eg: eth0
+# vim /etc/sysconfig/network-scripts/ifcfg-eth0
+   Check the onboot as yes
+   Change bootproto to static
+
+BOOTPROTO = “static”
+ONBOOT = yes
+IPADDR = 172.24.2.10                    
+NETMASK  = 255.255.255.0                                    	
+GATEWAY = 172.24.2.72	==== (route -n)		                
+DNS1 = 172.24.2.72  === (cat /etc/resolv.conf)
+
+
+2. Configure yum repository
+Ans - 
+- create a local.repo file under etc/yum.repos.d/  and include above repo server url (2 repositories can be added in a single repo file.)
+
+#cd /etc/yum.repos.d
+#vim loca.repo
+(** Type the following lines in rhcsa.repo file)
+[BaseOS]
+name=BASEOS
+baseurl=http://node.net2.example.com/repo/BaseOS
+enabled=1
+gpgcheck=0
+[AppStream]
+name=APPSTREAM
+baseurl=http://node.net2.example.com/repo/AppStream
+enabled=1
+gpgcheck=0
+Then save and exit the file ---- that is, press esc key and type :wq
+#yum clean all
+#yum repolist   === (will not show any packages count)
+
+- yum install sos –assumeno  (Test whether package is coming from right yum repo or Not!!!)
+
+3. Debug Selinux
+- A web server running on non standard port 82 is having issues serving content. Debug and fix the issues.
+* The web server on your system can serve all the existing HTML files from /var/www/html ( NOTE: Do not make any changes  to these files )
+* Web service should automatically start at boot time.
+
+Ans - 
+- firewall-cmd --add-port=82/tcp --permanent
+- firewall-cmd --add-port=82/udp --permanent
+- firewall-cmd --add-service=http --permanent
+- firewall-cmd –-reload
+- semanage port -a -t http_port_t -p tcp 82
+- systemctl restart httpd
+
+4. Configure NTP on node1 such that it is client of district.example.com
+Ans - 
+- yum install chrony
+- systemctl start/enable chronyd
+- vi /etc/chrony.conf and below
+  server district.example.com iburst
+- systemctl restart chrony
+- chronyc sources -v
+
+5. User groups and permissions.
+--> Create a group named "manager" 
+--> A user sarah and harry should belong to the "manager" group as a secondary group.
+--> User Natasha should have a non-interactive shell and she should not be a member of the "manager" group.
+--> Password for all users created should be "redhat123".
+
+Ans - 
+- groupadd manager
+- useradd -G manager sarah
+- passwd sarah
+- useradd -G manager harry
+- passwd harry
+- useradd -s sbin/nologin natasha
+- passwd natasha
+
+6. Create the user "jean" with uid 4332 with password "redhat123".
+- useradd -u 4332 jean
+- passwd jean
+
+7. locate the files of owner "harry" and copy to the location /root/found directory.
+- mkdir root/found
+- find / -user harry -exec cp -prfv {} root/found/ \;
+
+8. The user sarah must configure a cron job that runs daily at 2:40 pm  minute executes /bin/echo "hiya"
+- crontab -u sarah -e
+40 16 * * * /bin/echo "hiya"
+- systemctl restart crond
+- crontab -u sarah -l
+
+9. Directory Collaboration
+-->Create the Directory "solman"  with the following characteristics.
+-->Group ownership of "solam"  should go to the "manager" group.
+-->The directory should have full permission for all members of the 
+"manager" group 
+but not to the other users except "root".
+-->Files created in future under "solam" should get the same group ownership .
+--> user natasha will get rw permission on "solam" and user harry should not able to access the directory
+Ans - 								
+mkdir /solam			
+chgrp manager /solam
+chmod 770 /solam 
+chmod g+s /solam 
+setfacl -m u:natasha:rw- /solam 
+setfacl -m u:harry:--- /solam
+
+
+10. ACL
+-->Copy the file /etc/fstab to /var/tmp/ and configure the "ACL" as mentioned below. 
+-->The file /var/tmp/fstab should be owned by the "root". 
+-->The file /var/tmp/fstab should belong to the group "root".
+-->The file /var/tmp/fstab should not be executable by any one. 
+-->The user "sarah" should be able to read and write to the file. 
+-->The user "harry" can neither read nor write to the file. 
+-->Other users (future and current) should not be able to read /var/tmp/fstab.
+Ans:-
+cp /etc/fstab  /var/tmp/fstab
+ls -l /var/tmp/
+setfacl -m u:natasha:rw- /solam 
+setfacl -m u:harry:--- /solam
+
+
+11. Configure autofs
+→ node.net2.example.com has exported /rhome/remoteuser1 directory using nfs exports and which is ldapuser's home directory "utility.net2.example.com:/rusers/remoteuser2" . 
+--> Ldapuser's home directory should be automounted locally as /rhome/remoteuser1
+--> While login  remoteuser2 only home directory should be accessible.	
+
+1) cd  /etc/auto.master.d/
+vim user.repo
+/rusers	/etc/sample
+
+2) vim /etc/sample
+
+remoteuser1	-rw,sync,vers=4	node.net2.example.com:/rhome/remoteuser1
+
+3) systemctl restart autofs
+4) systemctl enable autofs
+
+5) try login  ----->  su - remoteuser1
+
+12. Find the string "enter" from "/usr/share/dict/words" file and copy those lines in /root/strings.txt file.
+- grep -iw enter /usr/share/dict/words >> /root/strings.txt
+
+13. Archive & compress for /etc directory under /var/tmp/archive.tar.bz2 format.
+- tar cjvf /var/tmp/archive.tar.bz2 /etc  	←--- for tar.gz replace j with z
