@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1>1701  Today is monday 2901 : k8s E2E Session Completed  : devops CI/CD  Session 07Jan to deploy to docker : Try again   </h1>
+    <h1>1701  Today is saturday 03-02: k8s E2E Session Completed  : devops CI/CD  Session 07Jan to deploy to docker : Try again   </h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
      
