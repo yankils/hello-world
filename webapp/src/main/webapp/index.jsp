@@ -224,6 +224,7 @@
               <option value="3">France</option>
               <option value="4">Armenia</option>
               <option value="5">USA</option>
+              <option value="6">Lagos</option>
             </select>
           </div>
         </div>
@@ -286,6 +287,7 @@
            <option value="3">France</option>
               <option value="4">Armenia</option>
               <option value="5">USA</option>
+              <option value="6">Lagos</option>
             </select>
           </div>
         </div>
@@ -304,6 +306,7 @@
               <option value="3">France</option>
               <option value="4">Armenia</option>
               <option value="5">USA</option>
+              <option value="6">Lagos</option>
             </select>
           </div>
         </div>
