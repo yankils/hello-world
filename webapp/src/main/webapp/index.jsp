@@ -295,6 +295,7 @@
             <option value="4">Armenia</option>
             <option value="5">USA</option>
             <option value="6">Nigeria</option>
+            <option value="7">Canada</option>
           </select>
         </div>
       </div>
@@ -358,6 +359,7 @@
             <option value="4">Armenia</option>
             <option value="5">USA</option>
             <option value="6">Nigeria</option>
+	    <option value="7">Canada</option>
           </select>
         </div>
       </div>
@@ -377,6 +379,7 @@
             <option value="4">Armenia</option>
             <option value="5">USA</option>
             <option value="6">Nigeria</option>
+	    <option value="7">Canada</option>
           </select>
         </div>
       </div>
