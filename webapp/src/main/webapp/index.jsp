@@ -1,38 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Phalangestech.ca Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('/w3images/forestbridge.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+<title> Bruno's test home Page </title>
 </head>
 <body>
-
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Logo
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">40 days left</p>
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-  </div>
-</div>
-
+        <body style=text-align:center;background-color:lemon;font-weight:400;font-size:15px;font-family:Helvetica,Arial,sans-serif>
+	<marquee><img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"></marquee>
+        <h1> Welcome to Bruno's custom nginx webpage hosted in a Docker container in a jenkins server. </h1>
+        <p> This container was deployed: <div id="date"></div></p>
+<script>
+        var date = new Date();
+        document.getElementById("date").innerHTML=date.toLocaleString();
+</script>
 </body>
 </html>
-
