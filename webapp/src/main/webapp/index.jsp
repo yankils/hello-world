@@ -4,7 +4,7 @@
 <title> Phalangestech.ca test home Page </title>
 </head>
 <body>
-        <body style=text-align:center;background-color:#FA8072;font-weight:400;font-size:15px;font-family:Helvetica,Arial,sans-serif>
+        <body style=text-align:center;background-color:#DB7093;font-weight:400;font-size:15px;font-family:Helvetica,Arial,sans-serif>
 	<marquee><img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"></marquee>
         <h1> Welcome to Phalangestech's custom webpage hosted in a Docker container and pushed to Dockerhub. </h1>
         <h2> This image is in turned pulled from dockerhub and deployed on kubernetes. </h2>
