@@ -5,7 +5,7 @@
 </head>
 <body>
         <body style=text-align:center;background-color:#FFC0CB;font-weight:400;font-size:15px;font-family:Helvetica,Arial,sans-serif>
-	<marquee><img src="https://sail.faunalia.eu/fancy-index/icons/docker.svg"></marquee>
+	<marquee><img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png"></marquee>
         <h1> Build a Docker Image and create a container on Ansible. </h1>
 <script>
         var date = new Date();
