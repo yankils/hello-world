@@ -19,8 +19,8 @@
     <junit.version>4.13.2</junit.version>
     <hamcrest.version>2.2</hamcrest.version>
     <mockito.version>4.11.0</mockito.version>
-    <servlet.version>4.0.1</servlet.version>
-    <jsp.version>2.3.3</jsp.version>
+    <servlet.version>6.0.0</servlet.version>
+    <jsp.version>3.1.0</jsp.version>
   </properties>
 
   <modules>
@@ -61,14 +61,14 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
         <version>${servlet.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>javax.servlet.jsp-api</artifactId>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.servlet.jsp-api</artifactId>
         <version>${jsp.version}</version>
         <scope>provided</scope>
       </dependency>
